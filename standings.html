@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standings — SWSL U15 Boys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚽</span>
+        <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="standings.html" class="active">Standings</a>
+        <a href="schedule.html">Schedule</a>
+      </div>
+      <div class="team-selector">
+        <label for="team-select">Your Team:</label>
+        <select id="team-select">
+          <option value="western-valley" data-color="#E63946">Western Valley</option>
+          <option value="fdsa" data-color="#1E88E5">FDSA</option>
+          <option value="charlotte" data-color="#000000">Charlotte Saints</option>
+          <option value="fundy" data-color="#FF8F00">Fundy Mustangs</option>
+          <option value="oasa" data-color="#43A047">OASA</option>
+          <option value="hampton" data-color="#757575">Hampton</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="hero" style="padding: 40px 20px;">
+    <div class="hero-content">
+      <h1 style="font-size: 36px;">📊 Full Standings</h1>
+      <p class="hero-sub">SWSL U15 Boys Division 1 — Regular Season</p>
+    </div>
+  </header>
+
+  <!-- STANDINGS TABLE -->
+  <section class="section">
+    <div class="container">
+      <div class="table-wrap">
+        <table class="standings-table" id="standings-table">
+          <thead>
+            <tr>
+              <th class="pos">#</th>
+              <th class="team-col">Team</th>
+              <th>G</th>
+              <th>W</th>
+              <th>T</th>
+              <th>L</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th class="pts-col">PTS</th>
+            </tr>
+          </thead>
+          <tbody id="standings-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGEND -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div style="display: flex; gap: 24px; color: var(--text-dim); font-size: 13px; flex-wrap: wrap;">
+        <span><strong>G</strong> = Games Played</span>
+        <span><strong>W</strong> = Wins (3 pts)</span>
+        <span><strong>T</strong> = Ties (1 pt)</span>
+        <span><strong>L</strong> = Losses (0 pts)</span>
+        <span><strong>GF</strong> = Goals For</span>
+        <span><strong>GA</strong> = Goals Against</span>
+        <span><strong>GD</strong> = Goal Difference</span>
+        <span><strong>PTS</strong> = Points</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Built with 🔥 by <strong>High Tide Studios</strong></p>
+      <p class="footer-sub">Data sourced from Soccer NB • Updated automatically</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

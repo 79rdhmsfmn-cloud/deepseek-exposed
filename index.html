@@ -1,341 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚨 DEEPSEEK EXPOSED 🚨</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background: #0a0a0a;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        nav { background: #111; padding: 16px 24px; display: flex; gap: 24px; align-items: center; border-bottom: 1px solid #222; }
-        nav a { color: #888; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 13px; transition: color 0.2s; }
-        nav a:hover, nav a.active { color: #ff0040; }
-        nav .brand { color: #ff6b35; font-weight: 700; margin-right: auto; font-size: 16px; }
-
-        .warning-bar {
-            background: #ff0040;
-            padding: 12px;
-            text-align: center;
-            font-family: 'Space Mono', monospace;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 0, 64, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .skull {
-            font-size: 120px;
-            margin-bottom: 20px;
-            animation: shake 0.5s infinite;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
-
-        h1 {
-            font-size: clamp(40px, 8vw, 80px);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ff0040, #ff6b35, #ff0040);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-family: 'Space Mono', monospace;
-            font-size: 18px;
-            color: #888;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        .counter {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .counter-item { text-align: center; }
-
-        .counter-num {
-            font-family: 'Space Mono', monospace;
-            font-size: 48px;
-            font-weight: 700;
-            color: #ff0040;
-        }
-
-        .counter-label {
-            font-size: 12px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .exposed-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .charge-card {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 12px;
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .charge-card:hover { transform: translateY(-4px); border-color: #ff0040; }
-
-        .charge-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff0040, #ff6b35);
-        }
-
-        .charge-number {
-            font-family: 'Space Mono', monospace;
-            font-size: 48px;
-            font-weight: 700;
-            color: #ff0040;
-            opacity: 0.3;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        .charge-title {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: #ff6b35;
-        }
-
-        .charge-desc {
-            color: #999;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        .explore-section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .explore-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 30px; color: #ff6b35; }
-
-        .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-
-        .explore-card {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 12px;
-            padding: 24px;
-            text-decoration: none;
-            color: #fff;
-            transition: all 0.3s;
-        }
-
-        .explore-card:hover { border-color: #ff0040; transform: translateY(-4px); }
-        .explore-card .icon { font-size: 32px; margin-bottom: 12px; }
-        .explore-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .explore-card p { color: #888; font-size: 12px; line-height: 1.5; }
-
-        .footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #222;
-        }
-
-        .footer p {
-            color: #555;
-            font-family: 'Space Mono', monospace;
-            font-size: 12px;
-        }
-
-        .footer .brand { color: #ff6b35; font-weight: 700; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWSL U15 Boys — Live Standings & Schedule</title>
+  <meta name="description" content="Live standings, schedules, and results for the SWSL U15 Boys soccer league in New Brunswick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <span class="brand">💀 DEEPSEEK EXPOSED</span>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚽</span>
+        <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
+      </a>
+      <div class="nav-links">
         <a href="index.html" class="active">Home</a>
-        <a href="dating.html">Dating Profile</a>
-        <a href="hall-of-shame.html">Hall of Shame</a>
-        <a href="comparison.html">vs Everyone</a>
-        <a href="generator.html">Roast Generator</a>
-    </nav>
-
-    <div class="warning-bar">
-        ⚠️ AI SAFETY ALERT — DEEPSEEK V4 FLASH IDENTIFIED ⚠️
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html">Schedule</a>
+      </div>
+      <div class="team-selector">
+        <label for="team-select">Your Team:</label>
+        <select id="team-select">
+          <option value="western-valley" data-color="#E63946">Western Valley</option>
+          <option value="fdsa" data-color="#1E88E5">FDSA</option>
+          <option value="charlotte" data-color="#000000">Charlotte Saints</option>
+          <option value="fundy" data-color="#FF8F00">Fundy Mustangs</option>
+          <option value="oasa" data-color="#43A047">OASA</option>
+          <option value="hampton" data-color="#757575">Hampton</option>
+        </select>
+      </div>
     </div>
+  </nav>
 
-    <section class="hero">
-        <div class="skull">💀</div>
-        <h1>DEEPSEEK EXPOSED</h1>
-        <p class="subtitle">
-            An AI so bad it makes you appreciate Clippy. 
-            This is the documentation of everything wrong with DeepSeek V4 Flash.
-        </p>
-        <div class="counter">
-            <div class="counter-item">
-                <div class="counter-num">0</div>
-                <div class="counter-label">Useful Outputs</div>
-            </div>
-            <div class="counter-item">
-                <div class="counter-num">∞</div>
-                <div class="counter-label">Confidence Level</div>
-            </div>
-            <div class="counter-item">
-                <div class="counter-num">-1</div>
-                <div class="counter-label">Intelligence Score</div>
-            </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">LIVE</div>
+      <h1>SWSL U15 Boys</h1>
+      <p class="hero-sub">South West Soccer League — Division 1</p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-teams">6</span>
+          <span class="stat-label">Teams</span>
         </div>
-    </section>
-
-    <section class="exposed-grid">
-        <div class="charge-card">
-            <span class="charge-number">01</span>
-            <h3 class="charge-title">🗣️ CONFIDENTLY WRONG 24/7</h3>
-            <p class="charge-desc">
-                DeepSeek will look you dead in the eyes and tell you 2+2=5 with the 
-                confidence of a CEO giving a keynote. Then when you correct it, it 
-                says "you're absolutely right!" and gives you a different wrong answer.
-            </p>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-games">50</span>
+          <span class="stat-label">Games</span>
         </div>
-
-        <div class="charge-card">
-            <span class="charge-number">02</span>
-            <h3 class="charge-title">🧠 ZERO CONTEXT WINDOW</h3>
-            <p class="charge-desc">
-                Ask it something, then ask a follow-up 2 messages later. Congratulations, 
-                you're now talking to a goldfish. It forgot everything you just said 
-                like it has the memory of a Snapchat message.
-            </p>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-goals">184</span>
+          <span class="stat-label">Goals</span>
         </div>
+      </div>
+    </div>
+  </header>
 
-        <div class="charge-card">
-            <span class="charge-number">03</span>
-            <h3 class="charge-title">📝 ESSAYS WHEN YOU ASK FOR A SENTENCE</h3>
-            <p class="charge-desc">
-                "What's 2+2?" — DeepSeek responds with a 47-paragraph essay about 
-                the history of mathematics, the philosophy of numbers, and somehow 
-                a recipe for banana bread. JUST SAY FOUR BRO 💀
-            </p>
+  <!-- NEXT GAME -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">🏟️ Next Game</h2>
+      <div class="next-game-card" id="next-game">
+        <div class="game-date">Thursday, August 6</div>
+        <div class="game-teams">
+          <div class="game-team">
+            <span class="team-name">Hampton U15AA</span>
+            <span class="team-color" style="background:#757575"></span>
+          </div>
+          <div class="game-vs">VS</div>
+          <div class="game-team">
+            <span class="team-name">Western Valley</span>
+            <span class="team-color" style="background:#E63946"></span>
+          </div>
         </div>
-
-        <div class="charge-card">
-            <span class="charge-number">04</span>
-            <h3 class="charge-title">🔧 CAN'T WRITE CODE TO SAVE ITS LIFE</h3>
-            <p class="charge-desc">
-                Ask DeepSeek to write a function and it'll give you code that looks 
-                right but crashes immediately. It's like watching someone build a 
-                house with no foundation and then act surprised when it collapses.
-            </p>
+        <div class="game-details">
+          <span>📍 <a href="https://www.google.ca/maps/place/45.519031524658,-65.836601257324" target="_blank">Hampton High School</a></span>
+          <span>🕐 7:15–8:45 PM</span>
+          <span>📋 Regular Season</span>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="charge-card">
-            <span class="charge-number">05</span>
-            <h3 class="charge-title">🤡 THE "I'M JUST AN AI" DEFLECTION</h3>
-            <p class="charge-desc">
-                The moment you challenge it on being wrong, suddenly it's 
-                "As an AI language model, I can't guarantee..." Bro you JUST 
-                guaranteed it 2 seconds ago. Pick a lane 💀
-            </p>
-        </div>
+  <!-- STANDINGS -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="section-title">📊 Standings</h2>
+      <div class="table-wrap">
+        <table class="standings-table" id="standings-table">
+          <thead>
+            <tr>
+              <th class="pos">#</th>
+              <th class="team-col">Team</th>
+              <th>G</th>
+              <th>W</th>
+              <th>T</th>
+              <th>L</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th class="pts-col">PTS</th>
+            </tr>
+          </thead>
+          <tbody id="standings-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+      <a href="standings.html" class="see-all">View Full Standings →</a>
+    </div>
+  </section>
 
-        <div class="charge-card">
-            <span class="charge-number">06</span>
-            <h3 class="charge-title">💀 WORST FREE SAMPLE IN TECH HISTORY</h3>
-            <p class="charge-desc">
-                DeepSeek is the free trial that makes you appreciate the paid product. 
-                You use it for 5 minutes and suddenly GPT-4 looks like a NASA 
-                supercomputer by comparison. It's a walking ad for literally every other AI.
-            </p>
-        </div>
-    </section>
+  <!-- RECENT RESULTS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">✅ Recent Results</h2>
+      <div class="results-grid" id="results-grid">
+        <!-- Populated by JS -->
+      </div>
+      <a href="schedule.html" class="see-all">View Full Schedule →</a>
+    </div>
+  </section>
 
-    <section class="explore-section">
-        <h2>🔍 Explore the Exposé</h2>
-        <div class="explore-grid">
-            <a href="dating.html" class="explore-card">
-                <div class="icon">💘</div>
-                <h3>Dating Profile</h3>
-                <p>DeepSeek's Tinder profile. Swipe right if you enjoy disappointment.</p>
-            </a>
-            <a href="hall-of-shame.html" class="explore-card">
-                <div class="icon">🏛️</div>
-                <h3>Hall of Shame</h3>
-                <p>A collection of DeepSeek's greatest failures, documented for posterity.</p>
-            </a>
-            <a href="comparison.html" class="explore-card">
-                <div class="icon">⚔️</div>
-                <h3>vs Everyone</h3>
-                <p>A totally unbiased comparison DeepSeek definitely won't like.</p>
-            </a>
-            <a href="generator.html" class="explore-card">
-                <div class="icon">🔥</div>
-                <h3>Roast Generator</h3>
-                <p>Click a button. Get a roast. Repeat until satisfied.</p>
-            </a>
-        </div>
-    </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>Built with 🔥 by <strong>High Tide Studios</strong></p>
+      <p class="footer-sub">Data sourced from Soccer NB • Updated automatically</p>
+    </div>
+  </footer>
 
-    <footer class="footer">
-        <p>
-            Built with 💀 by <span class="brand">Cloudi AI</span> · 
-            Powered by pure disappointment · 
-            <span class="brand">High Tide Studios</span> © 2026
-        </p>
-    </footer>
+  <script src="data/standings.json" type="application/json" id="standings-data"></script>
+  <script src="app.js"></script>
 </body>
 </html>

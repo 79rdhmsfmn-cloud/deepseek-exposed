@@ -1,0 +1,406 @@
+/* ========================================
+   SWSL U15 Boys — ESPN Killer Theme
+   ======================================== */
+
+:root {
+  --accent: #E63946;
+  --accent-glow: rgba(230, 57, 70, 0.3);
+  --bg: #0D0D0D;
+  --bg-card: #1A1A1A;
+  --bg-dark: #111111;
+  --text: #FFFFFF;
+  --text-dim: #888888;
+  --text-muted: #555555;
+  --border: #2A2A2A;
+  --green: #4CAF50;
+  --red: #E63946;
+  --yellow: #FFC107;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover { opacity: 0.8; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 13, 13, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+}
+.logo-icon { font-size: 24px; }
+.accent { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+}
+.nav-links a {
+  color: var(--text-dim);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  background: var(--bg-card);
+}
+
+.team-selector {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.team-selector label {
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 500;
+}
+.team-selector select {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.team-selector select:focus {
+  border-color: var(--accent);
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--accent-glow) 0%, transparent 60%);
+}
+.hero-content { max-width: 800px; margin: 0 auto; }
+.hero-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+.hero-sub {
+  color: var(--text-dim);
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-num {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--accent);
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 48px 0;
+}
+.section.dark {
+  background: var(--bg-dark);
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* NEXT GAME CARD */
+.next-game-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.next-game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.game-date {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.game-teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.game-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.team-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.team-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.game-vs {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  padding: 4px 12px;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+}
+.game-details {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: var(--text-dim);
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+/* TABLES */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.standings-table th {
+  background: var(--bg-card);
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+}
+.standings-table th.pos { width: 40px; }
+.standings-table th.team-col { text-align: left; }
+.standings-table th.pts-col { color: var(--accent); }
+
+.standings-table td {
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.standings-table td:first-child {
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.standings-table .team-cell {
+  text-align: left;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.standings-table .team-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.standings-table .pts {
+  font-weight: 800;
+  color: var(--accent);
+  font-size: 16px;
+}
+.standings-table tr.your-team {
+  background: var(--accent-glow);
+}
+.standings-table tr.your-team td {
+  border-bottom-color: rgba(230, 57, 70, 0.3);
+}
+.standings-table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+.standings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.see-all {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* RESULTS */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.result-card .result-date {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.result-card .result-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.result-card .result-team {
+  font-weight: 600;
+  font-size: 14px;
+}
+.result-card .result-num {
+  font-size: 24px;
+  font-weight: 900;
+}
+.result-card .result-divider {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.result-card .result-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.result-badge.win { background: var(--green); color: white; }
+.result-badge.loss { background: var(--red); color: white; }
+.result-badge.draw { background: var(--yellow); color: black; }
+
+/* FOOTER */
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 14px;
+}
+.footer-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-inner { flex-wrap: wrap; gap: 12px; }
+  .nav-links { order: 3; width: 100%; justify-content: center; }
+  .team-selector { order: 2; }
+  .hero h1 { font-size: 32px; }
+  .hero-stats { gap: 24px; }
+  .stat-num { font-size: 28px; }
+  .game-teams { flex-direction: column; gap: 12px; }
+  .game-team { flex-direction: row; }
+  .game-details { flex-direction: column; gap: 8px; }
+  .standings-table { font-size: 12px; }
+  .standings-table th, .standings-table td { padding: 10px 8px; }
+}

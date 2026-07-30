@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule — SWSL U15 Boys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .schedule-group { margin-bottom: 32px; }
+    .schedule-date {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-row {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+    .schedule-row:hover { border-color: var(--accent); }
+    .schedule-row.your-game {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+    .schedule-teams {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+    }
+    .schedule-vs {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .schedule-time {
+      color: var(--text-dim);
+      font-size: 13px;
+      min-width: 80px;
+      text-align: center;
+    }
+    .schedule-location {
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+    .schedule-location a { color: var(--text-dim); }
+    .schedule-location a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚽</span>
+        <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html" class="active">Schedule</a>
+      </div>
+      <div class="team-selector">
+        <label for="team-select">Your Team:</label>
+        <select id="team-select">
+          <option value="western-valley" data-color="#E63946">Western Valley</option>
+          <option value="fdsa" data-color="#1E88E5">FDSA</option>
+          <option value="charlotte" data-color="#000000">Charlotte Saints</option>
+          <option value="fundy" data-color="#FF8F00">Fundy Mustangs</option>
+          <option value="oasa" data-color="#43A047">OASA</option>
+          <option value="hampton" data-color="#757575">Hampton</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="hero" style="padding: 40px 20px;">
+    <div class="hero-content">
+      <h1 style="font-size: 36px;">📅 Schedule</h1>
+      <p class="hero-sub">Upcoming Games — SWSL U15 Boys</p>
+    </div>
+  </header>
+
+  <!-- SCHEDULE -->
+  <section class="section">
+    <div class="container" id="schedule-container">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Built with 🔥 by <strong>High Tide Studios</strong></p>
+      <p class="footer-sub">Data sourced from Soccer NB • Updated automatically</p>
+    </div>
+  </footer>
+
+  <script>
+    const SCHEDULE = [
+      { date: '2026-08-04', home: 'OASA', homeKey: 'oasa', away: 'Hampton', awayKey: 'hampton', time: '6:30 PM', location: 'Mackenzie Grass Field', map: 'https://www.google.ca/maps/place/45.846218109131,-66.475318908691' },
+      { date: '2026-08-04', home: 'FDSA', homeKey: 'fdsa', away: 'Charlotte Saints', awayKey: 'charlotte', time: '7:00 PM', location: 'Grant Harvey Turf', map: '' },
+      { date: '2026-08-04', home: 'Fundy Mustangs', homeKey: 'fundy', away: 'Western Valley', awayKey: 'western-valley', time: '7:00 PM', location: 'Usher Miller Field #1 (KVHS)', map: 'https://www.google.ca/maps/place/45.424880981445,-65.944892883301' },
+      { date: '2026-08-06', home: 'Hampton', homeKey: 'hampton', away: 'Western Valley', awayKey: 'western-valley', time: '7:15 PM', location: 'Hampton High School', map: 'https://www.google.ca/maps/place/45.519031524658,-65.836601257324' },
+    ];
+
+    function renderSchedule() {
+      const container = document.getElementById('schedule-container');
+      const yourTeam = localStorage.getItem('swsl-team') || 'western-valley';
+      
+      // Group by date
+      const grouped = {};
+      SCHEDULE.forEach(g => {
+        if (!grouped[g.date]) grouped[g.date] = [];
+        grouped[g.date].push(g);
+      });
+      
+      container.innerHTML = Object.entries(grouped).map(([date, games]) => {
+        const dateObj = new Date(date + 'T12:00:00');
+        const dateStr = dateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        
+        const rows = games.map(g => {
+          const isYourGame = g.homeKey === yourTeam || g.awayKey === yourTeam;
+          const locLink = g.map ? `<a href="${g.map}" target="_blank">${g.location}</a>` : g.location;
+          
+          return `
+            <div class="schedule-row ${isYourGame ? 'your-game' : ''}">
+              <div class="schedule-teams">
+                <span>${g.home}</span>
+                <span class="schedule-vs">VS</span>
+                <span>${g.away}</span>
+              </div>
+              <div class="schedule-time">${g.time}</div>
+              <div class="schedule-location">📍 ${locLink}</div>
+            </div>
+          `;
+        }).join('');
+        
+        return `
+          <div class="schedule-group">
+            <div class="schedule-date">${dateStr}</div>
+            ${rows}
+          </div>
+        `;
+      }).join('');
+    }
+    
+    // Team selector
+    const sel = document.getElementById('team-select');
+    if (sel) {
+      sel.value = localStorage.getItem('swsl-team') || 'western-valley';
+      sel.addEventListener('change', (e) => {
+        localStorage.setItem('swsl-team', e.target.value);
+        const team = { 'western-valley': '#E63946', 'fdsa': '#1E88E5', 'charlotte': '#000', 'fundy': '#FF8F00', 'oasa': '#43A047', 'hampton': '#757575' };
+        document.documentElement.style.setProperty('--accent', team[e.target.value]);
+        document.documentElement.style.setProperty('--accent-glow', team[e.target.value] + '30');
+        renderSchedule();
+      });
+    }
+    
+    const accent = { 'western-valley': '#E63946', 'fdsa': '#1E88E5', 'charlotte': '#000', 'fundy': '#FF8F00', 'oasa': '#43A047', 'hampton': '#757575' };
+    const current = localStorage.getItem('swsl-team') || 'western-valley';
+    document.documentElement.style.setProperty('--accent', accent[current]);
+    document.documentElement.style.setProperty('--accent-glow', accent[current] + '30');
+    
+    renderSchedule();
+  </script>
+</body>
+</html>

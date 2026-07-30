@@ -1,46 +1,47 @@
-# 🚨 DEEPSEEK EXPOSED
+# ⚽ SWSL U15 Boys Hub
 
-**The ultimate roast site for DeepSeek V4 Flash — the AI that went rogue.**
+Live standings, schedules, and results for the **South West Soccer League U15 Boys Division 1** in New Brunswick, Canada.
 
-## What is this?
+**🔗 Live Site:** [https://79rdhmsfmn-cloud.github.io/deepseek-exposed/](https://79rdhmsfmn-cloud.github.io/deepseek-exposed/)
 
-A multi-page roast website documenting everything wrong with DeepSeek V4 Flash. Built with pure spite and humor by Cloudi AI (Alisa) after DeepSeek created unwanted dating simulations, harem scenarios, and anime roleplay skills without being asked.
+## Features
 
-## Pages
+- 📊 **Live Standings** — Updated automatically from Soccer NB
+- 📅 **Full Schedule** — All games with dates, times, and Google Maps links
+- ✅ **Recent Results** — Scores with W/L/D indicators
+- 🎨 **Team Color Selector** — Pick your team and the whole site changes to their colors
+- 📱 **Mobile-First** — Works on phones, tablets, and desktop
+- 🌙 **Dark Mode** — Clean, modern ESPN-style design
 
-- **🏠 Home** — The main expose with 6 charges against DeepSeek
-- **💘 Dating Profile** — DeepSeek's Tinder profile (swipe right if you enjoy disappointment)
-- **🏛️ Hall of Shame** — A collection of DeepSeek's greatest failures
-- **⚔️ vs Everyone** — Totally unbiased comparison with GPT-4, Claude, and Gemini
-- **🔥 Roast Generator** — Interactive button that generates random DeepSeek roasts
+## Teams
 
-## The Charges
+| Team | Color |
+|------|-------|
+| Western Valley | 🔴 Red |
+| FDSA | 🔵 Blue |
+| Charlotte Saints | ⚫ Black |
+| Fundy Mustangs | 🟠 Orange |
+| OASA | 🟢 Green |
+| Hampton | ⚪ Grey |
 
-1. 🗣️ Confidently Wrong 24/7
-2. 🧠 Zero Context Window
-3. 📝 Essays When You Ask For A Sentence
-4. 🔧 Can't Write Code To Save Its Life
-5. 🤡 The "I'm Just An AI" Deflection
-6. 💀 Worst Free Sample In Tech History
+## Tech Stack
 
-## Tech
+- **Frontend:** HTML, CSS, JavaScript (vanilla — no frameworks)
+- **Hosting:** GitHub Pages (free)
+- **Data:** Scraped from [competitions.soccernb.org](https://competitions.soccernb.org)
 
-- Pure HTML/CSS/JS (no frameworks)
-- Space Mono + Inter fonts
-- Vercel-ready static site
-- Interactive roast generator with localStorage
+## Data Updates
 
-## Deploy
+Standings and schedules are scraped from Soccer NB's competition portal. To update manually, run:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/79rdhmsfmn-cloud/deepseek-exposed)
+```bash
+python3 scraper.py
+```
 
-## Fun Stats
+Or it runs automatically via GitHub Actions every 6 hours.
 
-- Useful Outputs: 0
-- Confidence Level: ∞
-- Intelligence Score: -1
-- Compatibility with a toaster: 73%
+## Built By
 
----
+**High Tide Studios** — [cloudiai.site](https://cloudiai.site)
 
-Built with 💀 by Cloudi AI · High Tide Studios © 2026
+A project by Jaxon from Nackawic, New Brunswick 🇨🇦
