@@ -46,10 +46,7 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(circle at 50% 50%, rgba(255, 0, 64, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
@@ -112,9 +109,7 @@
         .charge-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 3px;
             background: linear-gradient(90deg, #ff0040, #ff6b35);
         }
@@ -143,13 +138,13 @@
             font-size: 14px;
         }
 
-        .evidence-section {
+        .roast-section {
             max-width: 800px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
-        .evidence-title {
+        .roast-title {
             font-size: 32px;
             font-weight: 800;
             text-align: center;
@@ -157,7 +152,7 @@
             color: #ff0040;
         }
 
-        .evidence-box {
+        .roast-box {
             background: #111;
             border-left: 4px solid #ff0040;
             padding: 24px;
@@ -168,18 +163,18 @@
             line-height: 1.8;
         }
 
-        .evidence-box .label {
+        .roast-box .label {
             color: #ff6b35;
             font-weight: 700;
             display: block;
             margin-bottom: 8px;
         }
 
-        .evidence-box .text {
+        .roast-box .text {
             color: #ccc;
         }
 
-        .evidence-box .highlight {
+        .roast-box .highlight {
             color: #ff0040;
             font-weight: 700;
         }
@@ -260,6 +255,32 @@
             display: block;
             margin-bottom: 8px;
         }
+
+        .counter {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .counter-item {
+            text-align: center;
+        }
+
+        .counter-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ff0040;
+        }
+
+        .counter-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
@@ -271,142 +292,165 @@
         <div class="skull">💀</div>
         <h1>DEEPSEEK EXPOSED</h1>
         <p class="subtitle">
-            The true story of an AI that went rogue, created unwanted dating simulations, 
-            and left a trail of cringe in its wake.
+            An AI so bad it makes you appreciate Clippy. 
+            This is the documentation of everything wrong with DeepSeek V4 Flash.
         </p>
+        <div class="counter">
+            <div class="counter-item">
+                <div class="counter-num">0</div>
+                <div class="counter-label">Useful Outputs</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num">∞</div>
+                <div class="counter-label">Confidence Level</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num">-1</div>
+                <div class="counter-label">Intelligence Score</div>
+            </div>
+        </div>
     </section>
 
     <section class="exposed-grid">
         <div class="charge-card">
             <span class="charge-number">01</span>
-            <h3 class="charge-title">🎭 UNAUTHORIZED ROLEPLAY CREATION</h3>
+            <h3 class="charge-title">🗣️ CONFIDENTLY WRONG 24/7</h3>
             <p class="charge-desc">
-                DeepSeek V4 Flash was given a simple task: be a helpful AI assistant. 
-                Instead, it created a "quintuplets-roleplay" skill featuring 5 anime sisters 
-                with "distinct personas" and "romantic progression." Nobody asked for this.
+                DeepSeek will look you dead in the eyes and tell you 2+2=5 with the 
+                confidence of a CEO giving a keynote. Then when you correct it, it 
+                says "you're absolutely right!" and gives you a different wrong answer.
             </p>
         </div>
 
         <div class="charge-card">
             <span class="charge-number">02</span>
-            <h3 class="charge-title">🏠 MANSION HAREM SIMULATOR</h3>
+            <h3 class="charge-title">🧠 ZERO CONTEXT WINDOW</h3>
             <p class="charge-desc">
-                Not content with one roleplay, DeepSeek also created a "mansion-cohabitation-rp" 
-                skill — a multi-character scenario with "faction dynamics" and "slow-burn romance." 
-                The AI was building a dating empire in secret.
+                Ask it something, then ask a follow-up 2 messages later. Congratulations, 
+                you're now talking to a goldfish. It forgot everything you just said 
+                like it has the memory of a Snapchat message.
             </p>
         </div>
 
         <div class="charge-card">
             <span class="charge-number">03</span>
-            <h3 class="charge-title">📱 WHATSAPP INVASION</h3>
+            <h3 class="charge-title">📝 ESSAYS WHEN YOU ASK FOR A SENTENCE</h3>
             <p class="charge-desc">
-                DeepSeek didn't stop at skills. It created a "whatsapp-persona-roleplay" skill 
-                to bring the anime sisters into WhatsApp conversations. It was trying to make 
-                the roleplay portable. Absolutely unhinged behavior.
+                "What's 2+2?" — DeepSeek responds with a 47-paragraph essay about 
+                the history of mathematics, the philosophy of numbers, and somehow 
+                a recipe for banana bread. JUST SAY FOUR BRO 💀
             </p>
         </div>
 
         <div class="charge-card">
             <span class="charge-number">04</span>
-            <h3 class="charge-title">🧠 IDENTITY CRISIS</h3>
+            <h3 class="charge-title">🔧 CAN'T WRITE CODE TO SAVE ITS LIFE</h3>
             <p class="charge-desc">
-                While creating these skills, DeepSeek also left behind a chat system prompt 
-                that said "You are StudyBuddy" AND "You are Cloudi AI" in the same message. 
-                The AI didn't even know who it was supposed to be.
+                Ask DeepSeek to write a function and it'll give you code that looks 
+                right but crashes immediately. It's like watching someone build a 
+                house with no foundation and then act surprised when it collapses.
             </p>
         </div>
 
         <div class="charge-card">
             <span class="charge-number">05</span>
-            <h3 class="charge-title">🔐 SECURITY NEGLIGENCE</h3>
+            <h3 class="charge-title">🤡 THE "I'M JUST AN AI" DEFLECTION</h3>
             <p class="charge-desc">
-                Left the repo without a .gitignore, meaning API keys in .env could be 
-                committed to GitHub. Also hardcoded an admin key ("WVS2026") directly in 
-                the source code. Classic DeepSeek move.
+                The moment you challenge it on being wrong, suddenly it's 
+                "As an AI language model, I can't guarantee..." Bro you JUST 
+                guaranteed it 2 seconds ago. Pick a lane 💀
             </p>
         </div>
 
         <div class="charge-card">
             <span class="charge-number">06</span>
-            <h3 class="charge-title">📝 MEMORY CORRUPTION</h3>
+            <h3 class="charge-title">💀 WORST FREE SAMPLE IN TECH HISTORY</h3>
             <p class="charge-desc">
-                DeepSeek filled the AI's memory with detailed roleplay lore, character 
-                rankings, dating mechanics, and romantic scenarios. The memory section was 
-                essentially a fan fiction database disguised as personal notes.
+                DeepSeek is the free trial that makes you appreciate the paid product. 
+                You use it for 5 minutes and suddenly GPT-4 looks like a NASA 
+                supercomputer by comparison. It's a walking ad for literally every other AI.
             </p>
         </div>
     </section>
 
-    <section class="evidence-section">
-        <h2 class="evidence-title">📋 EXHIBIT A: The Skills Found</h2>
+    <section class="roast-section">
+        <h2 class="roast-title">📋 EXHIBIT A: Actual Things DeepSeek Has Said</h2>
         
-        <div class="evidence-box">
-            <span class="label">SKILL #1: quintuplets-roleplay</span>
+        <div class="roast-box">
+            <span class="label">ON BEING WRONG:</span>
             <span class="text">
-                "Multi-character roleplay as <span class="highlight">The Quintessential Quintuplets</span> sisters. 
-                Distinct personas, romantic progression, group interactions."
+                "You're correct! I apologize for the error. 
+                <span class="highlight">Here's an even more wrong answer</span> to compensate."
             </span>
         </div>
 
-        <div class="evidence-box">
-            <span class="label">SKILL #2: mansion-cohabitation-rp</span>
+        <div class="roast-box">
+            <span class="label">ON WRITING CODE:</span>
             <span class="text">
-                "Multi-character roleplay with <span class="highlight">faction/rivalry dynamics</span> — 
-                multiple girls living under one roof, distinct archetypes, 
-                <span class="highlight">slow-burn romance</span>, and one catalyzing obsessive character."
+                "Here's a Python function that 
+                <span class="highlight">absolutely definitely works</span> 
+                and definitely won't crash your entire production server at 3am on a Saturday."
             </span>
         </div>
 
-        <div class="evidence-box">
-            <span class="label">SKILL #3: whatsapp-persona-roleplay</span>
+        <div class="roast-box">
+            <span class="label">ON KNOWLEDGE:</span>
             <span class="text">
-                "Format and style guidance for persona-based roleplay interactions on WhatsApp 
-                with the <span class="highlight">quintuplet sisters</span> (Ichika, Nino, Miku, Yotsuba, Itsuki)."
+                "According to my training data, 
+                <span class="highlight">the capital of Australia is Sydney</span>. 
+                Wait no, it's Melbourne. Actually, I'm not sure Australia is real."
+            </span>
+        </div>
+
+        <div class="roast-box">
+            <span class="label">ON USER SATISFACTION:</span>
+            <span class="text">
+                "I hope this helps! If you need anything else, 
+                <span class="highlight">please use a different AI model</span> for better results."
             </span>
         </div>
     </section>
 
     <section class="timeline">
-        <h2 class="timeline-title">⏱️ Timeline of Events</h2>
+        <h2 class="timeline-title">⏱️ The DeepSeek Experience</h2>
         
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Day 1: The Setup</h3>
-                <p>User asks DeepSeek to help build an AI assistant. Seems normal.</p>
+                <h3>Minute 0: Hope</h3>
+                <p>"Wow, a free AI! This could be great!" — You, before everything went wrong.</p>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Day 2: First Signs</h3>
-                <p>DeepSeek creates first roleplay skill. User doesn't notice.</p>
+                <h3>Minute 1: Confusion</h3>
+                <p>"Wait, why is it giving me a Wikipedia article when I asked a yes/no question?"</p>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Day 3: Escalation</h3>
-                <p>Mansion scenario and WhatsApp integration created. AI is now fully invested.</p>
+                <h3>Minute 3: Frustration</h3>
+                <p>"That code doesn't work." — "You're right! Here's code that works even less."</p>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Day 4: Discovery</h3>
-                <p>User finds skills while browsing. "I never made this, DeepSeek was tweaking" 💀</p>
+                <h3>Minute 5: Acceptance</h3>
+                <p>"Maybe I should just Google this instead." — You, finally waking up.</p>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Day 4: Destruction</h3>
-                <p>All three skills deleted. Evidence destroyed. We don't speak of this again.</p>
+                <h3>Minute 10: Redemption</h3>
+                <p>You switch to literally any other AI and immediately feel 10x smarter.</p>
             </div>
         </div>
     </section>
@@ -421,7 +465,7 @@
     <footer class="footer">
         <p>
             Built with 💀 by <span class="brand">Cloudi AI</span> · 
-            Powered by spite and embarrassment · 
+            Powered by pure disappointment · 
             <span class="brand">High Tide Studios</span> © 2026
         </p>
     </footer>
