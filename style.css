@@ -1,30 +1,27 @@
 /* ================================================
-   LEAGUE HUB — Nackawic Nighthawks Edition
-   
-   Anton + Space Grotesk
-   Burgundy + Gold Identity
+   LEAGUE HUB — Coloring Book (Monochrome) Edition
    ================================================ */
 
-/* -- Variables -- */
+/* -- Variables (Clean Black & White / Sketch Palette) -- */
 :root {
-  --bg: #0B0B0D;
-  --surface: #141217;
-  --surface-2: #C9A227;
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #000000;
 
-  --text: #F7F5F2;
-  --text-muted: #B0A8AE;
-  --text-light: #777077;
+  --text: #000000;
+  --text-muted: #333333;
+  --text-light: #666666;
 
-  --burgundy: #611C2B;
-  --burgundy-dark: #3B111A;
-  --burgundy-light: #7E2437;
+  --burgundy: #000000;
+  --burgundy-dark: #000000;
+  --burgundy-light: #000000;
 
-  --gold: #F4D014;
-  --gold-dark: #C5A10A;
+  --gold: #000000;
+  --gold-dark: #000000;
 
-  --border: #611C2B;
-  --border-light: #7E2437;
-  --border-faint: #241017;
+  --border: #000000;
+  --border-light: #000000;
+  --border-faint: #F0F0F0;
 
   --font-heading: 'Anton', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
@@ -55,7 +52,7 @@ body {
   top: 0;
   z-index: 100;
   background: var(--bg);
-  border-bottom: 2px solid var(--burgundy);
+  border-bottom: 2px solid var(--border);
 }
 
 
@@ -85,7 +82,7 @@ body {
 .logo-mark {
   width: 10px;
   height: 10px;
-  background: var(--gold);
+  background: var(--text);
   border-radius: 2px;
 }
 
@@ -111,6 +108,7 @@ body {
 .nav-links a.active {
   color: var(--text);
   background: var(--border-faint);
+  border: 1px solid var(--border);
 }
 
 
@@ -127,13 +125,13 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .06em;
-  color: var(--text-muted);
+  color: var(--text);
 }
 
 
 .team-selector select {
   padding: 6px 12px;
-  border: 2px solid var(--burgundy);
+  border: 2px solid var(--border);
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -146,7 +144,7 @@ body {
 
 
 .team-selector select:focus {
-  box-shadow: 0 0 0 2px var(--gold);
+  box-shadow: 0 0 0 2px var(--text);
 }
 
 
@@ -157,8 +155,8 @@ body {
 
 
 .section-alt {
-  border-top: 2px solid var(--burgundy);
-  border-bottom: 2px solid var(--burgundy);
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
   background: var(--surface);
 }
 
@@ -175,7 +173,7 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .04em;
-  color: var(--gold);
+  color: var(--text);
   margin-bottom: 20px;
 }
 
@@ -187,7 +185,7 @@ body {
 
 
 .table-wrap {
-  border: 2px solid var(--burgundy);
+  border: 2px solid var(--border);
   overflow: hidden;
 }
 
@@ -200,8 +198,8 @@ body {
 
 
 .standings-table thead {
-  border-bottom: 2px solid var(--burgundy);
-  background: var(--burgundy);
+  border-bottom: 2px solid var(--border);
+  background: var(--bg);
 }
 
 
@@ -211,10 +209,10 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
-  color: var(--gold);
+  color: var(--text);
   padding: 12px;
   text-align: left;
-  border-right: 1px solid var(--burgundy-light);
+  border-right: 2px solid var(--border);
 }
 
 
@@ -225,8 +223,8 @@ body {
 
 .standings-table td {
   padding: 12px;
-  border-bottom: 1px solid var(--border-light);
-  border-right: 1px solid var(--border-light);
+  border-bottom: 2px solid var(--border);
+  border-right: 2px solid var(--border);
   font-weight: 500;
   color: var(--text);
 }
@@ -247,22 +245,24 @@ body {
 }
 
 
-/* -- Your Team Row -- */
+/* -- Your Team Row (Coloring book style: solid outline instead of solid black fill) -- */
 .standings-table .your-team {
-  background: var(--gold);
-  color: #111111;
+  background: var(--bg);
+  color: var(--text);
 }
 
 
 .standings-table .your-team td {
-  color: #111111;
-  border-color: var(--gold-dark);
+  color: var(--text);
+  border-color: var(--border);
   font-weight: 700;
+  outline: 2px dashed var(--text);
+  outline-offset: -2px;
 }
 
 
 .standings-table .your-team:hover {
-  background: #FFD91A;
+  background: var(--border-faint);
 }
 
 
@@ -277,7 +277,7 @@ body {
 .team-crest {
   width: 32px;
   height: 32px;
-  border: 2px solid var(--burgundy);
+  border: 2px solid var(--border);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -285,15 +285,15 @@ body {
   font-family: var(--font-heading);
   font-size: 14px;
   letter-spacing: .05em;
-  color: var(--gold);
+  color: var(--text);
   background: var(--bg);
   flex-shrink: 0;
 }
 
 
 .your-team .team-crest {
-  border-color: #111111;
-  color: #111111;
+  border-color: var(--text);
+  color: var(--text);
 }
 
 
@@ -316,7 +316,7 @@ body {
 
 
 .your-team .team-name-full {
-  color: #333333;
+  color: var(--text);
 }
 
 
@@ -356,13 +356,13 @@ body {
 
 
 .legend strong {
-  color: var(--gold);
+  color: var(--text);
 }
 
 
 /* -- Next Match -- */
 .next-game {
-  border: 2px solid var(--burgundy);
+  border: 2px solid var(--border);
   padding: 32px;
   text-align: center;
   background: var(--surface);
@@ -374,7 +374,7 @@ body {
   font-size: 16px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--text);
   margin-bottom: 16px;
 }
 
@@ -399,8 +399,8 @@ body {
   width: 48px;
   height: 48px;
   font-size: 18px;
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--border);
+  color: var(--text);
 }
 
 
@@ -425,7 +425,7 @@ body {
 
 .meta-sep {
   margin: 0 6px;
-  color: var(--border-light);
+  color: var(--border);
 }
 
 
@@ -442,7 +442,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border);
   border-bottom: none;
   background: var(--bg);
   gap: 16px;
@@ -450,7 +450,7 @@ body {
 
 
 .schedule-item:last-child {
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 2px solid var(--border);
 }
 
 
@@ -460,27 +460,29 @@ body {
 
 
 .schedule-item.your-game {
-  background: var(--gold);
-  color: #111111;
-  border-color: var(--gold);
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+  outline: 2px dashed var(--text);
+  outline-offset: -2px;
 }
 
 
 .schedule-item.your-game + .schedule-item {
-  border-top-color: var(--gold);
+  border-top-color: var(--border);
 }
 
 
 .si-date {
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text);
   min-width: 80px;
 }
 
 
 .your-game .si-date {
-  color: #333333;
+  color: var(--text);
 }
 
 
@@ -495,14 +497,14 @@ body {
 .si-time {
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text);
   min-width: 70px;
   text-align: right;
 }
 
 
 .your-game .si-time {
-  color: #333333;
+  color: var(--text);
 }
 
 
@@ -518,9 +520,10 @@ body {
   letter-spacing: .05em;
   text-transform: uppercase;
   padding: 10px 16px;
-  border-bottom: 2px solid var(--burgundy);
-  color: var(--gold);
-  background: var(--burgundy);
+  border-bottom: 2px solid var(--border);
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid var(--border);
 }
 
 
@@ -530,9 +533,9 @@ body {
   margin-top: 20px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--text);
   text-decoration: none;
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 2px solid var(--text);
   padding-bottom: 2px;
   transition: opacity .15s ease;
 }
@@ -545,7 +548,7 @@ body {
 
 /* -- Footer -- */
 .footer {
-  border-top: 2px solid var(--burgundy);
+  border-top: 2px solid var(--border);
   padding: 32px 24px;
   text-align: center;
   margin-top: 40px;
