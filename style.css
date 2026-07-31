@@ -15,13 +15,8 @@
   --text-muted: #64748b;
   --border: rgba(255, 255, 255, 0.06);
   --border-hover: rgba(255, 255, 255, 0.12);
-  --green: rgba(34, 197, 94, 0.12);
-  --green-text: #4ade80;
-  --red: rgba(239, 68, 68, 0.12);
-  --red-text: #f87171;
   --radius: 10px;
   --radius-sm: 6px;
-  --radius-pill: 100px;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Outfit', 'Inter', sans-serif;
 }
@@ -52,7 +47,7 @@ a:hover { text-decoration: underline; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -64,7 +59,6 @@ a:hover { text-decoration: underline; }
   height: 56px;
   display: flex;
   align-items: center;
-  gap: 28px;
 }
 .logo {
   display: flex;
@@ -76,6 +70,8 @@ a:hover { text-decoration: underline; }
   letter-spacing: -0.3px;
   text-decoration: none;
   white-space: nowrap;
+  margin-right: 24px;
+  flex-shrink: 0;
 }
 .logo:hover { text-decoration: none; }
 .logo-mark {
@@ -98,15 +94,20 @@ a:hover { text-decoration: underline; }
 }
 .accent { color: var(--accent); }
 
-.nav-links { display: flex; gap: 2px; }
+.nav-links {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
 .nav-links a {
   color: var(--text-muted);
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.15s ease;
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--text); background: var(--bg-elevated); text-decoration: none; }
 .nav-links a.active { color: var(--text); background: var(--bg-elevated); }
@@ -116,6 +117,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 .team-selector label {
   color: var(--text-muted);
@@ -123,6 +125,7 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  white-space: nowrap;
 }
 .team-selector select {
   background: var(--bg-card);
@@ -184,6 +187,7 @@ a:hover { text-decoration: underline; }
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  table-layout: fixed;
 }
 .standings-table thead {
   position: sticky;
@@ -192,7 +196,7 @@ a:hover { text-decoration: underline; }
 }
 .standings-table th {
   background: var(--bg-elevated);
-  padding: 10px 12px;
+  padding: 10px 8px;
   text-align: center;
   font-weight: 600;
   font-size: 10px;
@@ -203,15 +207,16 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 .standings-table th.col-pos { width: 36px; }
-.standings-table th.col-team { text-align: left; padding-left: 16px; }
+.standings-table th.col-team { text-align: left; padding-left: 14px; width: 280px; }
 .standings-table th.col-pts { color: var(--accent); }
 
 .standings-table td {
-  padding: 14px 12px;
+  padding: 12px 8px;
   text-align: center;
   border-bottom: 1px solid var(--border);
   font-variant-numeric: tabular-nums;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 /* Alternating row shading */
@@ -224,14 +229,16 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   color: var(--text-muted);
   width: 36px;
+  text-align: center;
 }
 
-.standings-table .team-cell {
-  text-align: left;
-  padding-left: 16px;
+/* Team cell */
+.team-cell {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  padding-left: 14px;
+  overflow: hidden;
 }
 
 /* Team Crests */
@@ -255,7 +262,13 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.5px;
 }
 
-.team-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.team-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  overflow: hidden;
+}
 .team-name-primary {
   font-weight: 600;
   font-size: 13px;
@@ -263,7 +276,6 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 220px;
 }
 .team-name-full {
   font-size: 10px;
@@ -271,7 +283,6 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 220px;
 }
 
 .standings-table .pts {
@@ -352,7 +363,7 @@ a:hover { text-decoration: underline; }
 }
 .meta-sep { opacity: 0.3; }
 
-/* ── SCHEDULE LIST (HOME) ───────────────── */
+/* ── SCHEDULE LIST ──────────────────────── */
 
 .schedule-list {
   display: flex;
@@ -392,24 +403,6 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 
-/* ── FOOTER ─────────────────────────────── */
-
-.footer {
-  padding: 32px 24px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-.footer-text {
-  color: var(--text-muted);
-  font-size: 13px;
-}
-.footer-sub {
-  color: var(--text-muted);
-  font-size: 11px;
-  opacity: 0.6;
-  margin-top: 4px;
-}
-
 /* ── LEGEND ─────────────────────────────── */
 
 .legend {
@@ -437,22 +430,46 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
 }
 
+/* ── FOOTER ─────────────────────────────── */
+
+.footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-text {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer-sub {
+  color: var(--text-muted);
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
 /* ── RESPONSIVE ─────────────────────────── */
 
 @media (max-width: 768px) {
-  .nav-inner { gap: 10px; flex-wrap: wrap; }
-  .nav-links { order: 3; width: 100%; justify-content: center; padding-top: 4px; }
-  .team-selector { order: 2; }
+  .nav-inner { padding: 0 16px; gap: 0; }
+  .logo { margin-right: 12px; font-size: 13px; }
+  .logo-mark { width: 24px; height: 24px; }
+  .logo-mark::after { width: 10px; height: 10px; }
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 6px 8px; font-size: 12px; }
+  .team-selector label { display: none; }
+  .team-selector select { font-size: 12px; padding: 4px 8px; }
   .hero { padding: 36px 24px 28px; }
   .hero h1 { font-size: 30px; }
   .next-game-matchup { flex-direction: column; gap: 10px; }
   .next-game-meta { flex-direction: column; gap: 4px; }
   .meta-sep { display: none; }
-  .standings-table { font-size: 12px; }
-  .standings-table th, .standings-table td { padding: 8px 6px; }
+  .standings-table { font-size: 12px; table-layout: auto; }
+  .standings-table th, .standings-table td { padding: 8px 5px; }
   .team-crest { width: 26px; height: 26px; }
   .team-crest span { font-size: 9px; }
-  .team-name-primary { font-size: 12px; max-width: 140px; }
+  .team-name-primary { font-size: 12px; }
+  .team-name-full { display: none; }
   .schedule-item { flex-direction: column; align-items: flex-start; gap: 6px; }
   .schedule-item .si-time { text-align: left; }
 }
