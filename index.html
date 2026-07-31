@@ -6,7 +6,7 @@
   <title>SWSL U15 Boys — Standings & Schedule</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
         <a href="schedule.html">Schedule</a>
       </div>
       <div class="team-selector">
-        <label for="team-select">Your Team</label>
+        <label for="team-select" class="sr-only">Your Team</label>
         <select id="team-select">
           <option value="western-valley">Western Valley</option>
           <option value="fdsa">FDSA</option>
@@ -43,71 +43,76 @@
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Standings</h2>
-      <div class="table-wrap">
-        <table class="standings-table" id="standings-table">
-          <thead>
-            <tr>
-              <th class="col-pos">#</th>
-              <th class="col-team">Team</th>
-              <th>P</th>
-              <th>W</th>
-              <th>D</th>
-              <th>L</th>
-              <th>GF</th>
-              <th>GA</th>
-              <th>GD</th>
-              <th class="col-pts">PTS</th>
-            </tr>
-          </thead>
-          <tbody id="standings-body">
-          </tbody>
-        </table>
-      </div>
-      <a href="standings.html" class="see-all">View Full Standings &rarr;</a>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Next Match</h2>
-      <div class="next-game" id="next-game">
-        <div class="next-game-date">Thursday, August 6</div>
-        <div class="next-game-matchup">
-          <div class="next-team">
-            <div class="team-crest" style="--team-color:#9E9E9E">
-              <span>HA</span>
-            </div>
-            <span class="next-team-name">Hampton U15AA</span>
-          </div>
-          <div class="next-vs">vs</div>
-          <div class="next-team">
-            <div class="team-crest" style="--team-color:#E63946">
-              <span>WV</span>
-            </div>
-            <span class="next-team-name">Western Valley</span>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Standings</h2>
+        <div class="table-container">
+          <div class="table-wrap">
+            <table class="standings-table" id="standings-table">
+              <thead>
+                <tr>
+                  <th class="col-pos">#</th>
+                  <th class="col-team">Team</th>
+                  <th>P</th>
+                  <th>W</th>
+                  <th>D</th>
+                  <th>L</th>
+                  <th>GF</th>
+                  <th>GA</th>
+                  <th>GD</th>
+                  <th class="col-pts">PTS</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body">
+                <!-- Dynamically injected via app.js -->
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="next-game-meta">
-          <span>Hampton High School</span>
-          <span class="meta-sep">&middot;</span>
-          <span>7:15 PM</span>
-          <span class="meta-sep">&middot;</span>
-          <span>Regular Season</span>
+        <a href="standings.html" class="see-all">View Full Standings &rarr;</a>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Next Match</h2>
+        <div class="next-game" id="next-game">
+          <div class="next-game-date">Thursday, August 6</div>
+          <div class="next-game-matchup">
+            <div class="next-team">
+              <div class="team-crest" style="--team-color:#9E9E9E">
+                <span>HA</span>
+              </div>
+              <span class="next-team-name">Hampton U15AA</span>
+            </div>
+            <div class="next-vs">vs</div>
+            <div class="next-team">
+              <div class="team-crest" style="--team-color:#E63946">
+                <span>WV</span>
+              </div>
+              <span class="next-team-name">Western Valley</span>
+            </div>
+          </div>
+          <div class="next-game-meta">
+            <span>Hampton High School</span>
+            <span class="meta-sep">&middot;</span>
+            <span>7:15 PM</span>
+            <span class="meta-sep">&middot;</span>
+            <span>Regular Season</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Remaining Games</h2>
-      <div class="schedule-list" id="home-schedule"></div>
-      <a href="schedule.html" class="see-all">View Full Schedule &rarr;</a>
-    </div>
-  </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Remaining Games</h2>
+        <div class="schedule-list" id="home-schedule"></div>
+        <a href="schedule.html" class="see-all">View Full Schedule &rarr;</a>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
