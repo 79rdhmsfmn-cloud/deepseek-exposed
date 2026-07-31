@@ -6,20 +6,20 @@
 
 /* -- Variables -- */
 :root {
-  --bg: #d1a919;
-  --surface: #121212;
-  --surface-2: #d1a919;
+  --bg: #111111;
+  --surface: #161B22;
+  --surface-2: #1E242D;
 
   --text: #F5F7FA;
   --text-muted: #A4ACB8;
   --text-light: #6B7280;
 
-  --border: #2C3440;
-  --border-light: #3A4350;
-  --border-faint: #232A34;
+  --border: #611C2B;
+  --border-light: #7E2437;
+  --border-faint: #3B111A;
 
-  --accent: #FFFFFF;
-  --accent-rgb: 255,255,255;
+  --accent: #F4D014;
+  --accent-rgb: 244,208,20;
 
   --font-heading: 'Anton', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
@@ -74,12 +74,13 @@ body {
 .logo-mark {
   width: 10px;
   height: 10px;
-  background: var(--text);
+  background: var(--accent);
   border-radius: 2px;
 }
 
 .logo .accent {
   font-weight: 400;
+  color: var(--accent);
 }
 
 .nav-links {
@@ -137,6 +138,7 @@ body {
   border-bottom: 2px solid var(--border);
   padding: 60px 24px;
   text-align: center;
+  background: linear-gradient(180deg, #611C2B 0%, var(--bg) 100%);
 }
 
 .hero-content h1 {
@@ -163,6 +165,7 @@ body {
 .section-alt {
   border-top: 2px solid var(--border);
   border-bottom: 2px solid var(--border);
+  background: #151113;
 }
 
 .container {
@@ -200,6 +203,7 @@ body {
 
 .standings-table thead {
   border-bottom: 2px solid var(--border);
+  background: #611C2B;
 }
 
 .standings-table th {
@@ -247,11 +251,11 @@ body {
 
 .standings-table .your-team td {
   color: var(--bg);
-  border-color: #333;
+  border-color: #C5A10A;
 }
 
 .standings-table .your-team:hover {
-  background: #E5E5E5;
+  background: #FFD91A;
 }
 
 
@@ -299,7 +303,7 @@ body {
 }
 
 .your-team .team-name-full {
-  color: #999;
+  color: #333;
 }
 
 
@@ -342,6 +346,7 @@ body {
   border: 2px solid var(--border);
   padding: 32px;
   text-align: center;
+  background: var(--surface);
 }
 
 .next-game-date {
@@ -349,7 +354,7 @@ body {
   font-size: 16px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent);
   margin-bottom: 16px;
 }
 
@@ -371,6 +376,7 @@ body {
   width: 48px;
   height: 48px;
   font-size: 18px;
+  border-color: var(--accent);
 }
 
 .next-team-name {
@@ -439,7 +445,7 @@ body {
 }
 
 .your-game .si-date {
-  color: #555;
+  color: #333;
 }
 
 .si-matchup {
@@ -458,7 +464,7 @@ body {
 }
 
 .your-game .si-time {
-  color: #555;
+  color: #333;
 }
 
 
@@ -475,6 +481,7 @@ body {
   padding: 10px 16px;
   border-bottom: 2px solid var(--border);
   color: var(--text);
+  background: #611C2B;
 }
 
 
@@ -484,9 +491,9 @@ body {
   margin-top: 20px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--text);
+  color: var(--accent);
   text-decoration: none;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--accent);
   padding-bottom: 2px;
   transition: opacity .15s ease;
 }
@@ -502,6 +509,7 @@ body {
   padding: 32px 24px;
   text-align: center;
   margin-top: 40px;
+  background: #151113;
 }
 
 .footer-text {
