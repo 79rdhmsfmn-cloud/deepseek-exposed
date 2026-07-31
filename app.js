@@ -59,19 +59,20 @@ const TEAMS = {
 // STANDINGS TABLE [EDIT]
 // To update the table, edit each row in this array.
 //
-// Columns:
-//   team  = team name (must match TEAMS key's name)
-//   key   = must match a key in the TEAMS object above
-//   g     = games played
-//   w     = wins (3 pts each)
-//   t     = draws/ties (1 pt each)
-//   l     = losses (0 pts)
-//   gf    = goals for (total goals scored)
-//   ga    = goals against (total goals conceded)
-//   gd    = goal difference (gf minus ga)
-//   pts   = points (w*3 + t*1) — UPDATE THIS when you change w/t
+// ===========================================
+// QUICK MATH GUIDE FOR W, L, GD, PTS:
+// ===========================================
+// • g (Games Played): Total matches played so far (should equal W + T + L).
+// • w (Wins): Matches won. Each win adds 3 points to PTS.
+// • t (Ties/Draws): Matches ended in a draw. Each tie adds 1 point to PTS.
+// • l (Losses): Matches lost. Adds 0 points to PTS.
+// • gf (Goals For): Total goals your team has scored across all games.
+// • ga (Goals Against): Total goals scored *against* your team by opponents.
+// • gd (Goal Difference): Calculated automatically or manually as (gf minus ga). 
+//     - Example: If gf is 18 and ga is 45, gd is -27. If positive, include a plus sign or number (e.g., 58).
+// • pts (Points): Calculated as (w * 3) + (t * 1). Make sure to update this whenever wins or ties change!
 //
-// Order matters! First team = 1st place. Sort by PTS descending.
+// Order matters! First team in this array = 1st place. Sort descending by PTS.
 // ═══════════════════════════════════════════
 
 const STANDINGS = [
