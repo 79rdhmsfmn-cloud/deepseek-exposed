@@ -36,7 +36,7 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .container {
-  max-width: 1080px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -53,7 +53,7 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1080px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 0 24px;
   height: 56px;
@@ -144,7 +144,7 @@ a:hover { text-decoration: underline; }
 /* ── HERO ───────────────────────────────── */
 
 .hero {
-  padding: 52px 24px 40px;
+  padding: 48px 24px 36px;
   text-align: center;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.04) 0%, transparent 100%);
@@ -152,7 +152,7 @@ a:hover { text-decoration: underline; }
 .hero-content { max-width: 600px; margin: 0 auto; }
 .hero h1 {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 900;
   letter-spacing: -1.5px;
   margin-bottom: 6px;
@@ -165,13 +165,13 @@ a:hover { text-decoration: underline; }
 
 /* ── SECTIONS ───────────────────────────── */
 
-.section { padding: 44px 0; }
+.section { padding: 40px 0; }
 .section-alt { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-title {
   font-family: var(--font-display);
   font-size: 17px;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: -0.2px;
 }
 
@@ -187,7 +187,6 @@ a:hover { text-decoration: underline; }
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  table-layout: fixed;
 }
 .standings-table thead {
   position: sticky;
@@ -196,7 +195,7 @@ a:hover { text-decoration: underline; }
 }
 .standings-table th {
   background: var(--bg-elevated);
-  padding: 10px 8px;
+  padding: 12px 10px;
   text-align: center;
   font-weight: 600;
   font-size: 10px;
@@ -206,12 +205,16 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
-.standings-table th.col-pos { width: 36px; }
-.standings-table th.col-team { text-align: left; padding-left: 14px; width: 280px; }
+.standings-table th.col-pos { width: 40px; }
+.standings-table th.col-team {
+  text-align: left;
+  padding-left: 16px;
+  width: auto;
+}
 .standings-table th.col-pts { color: var(--accent); }
 
 .standings-table td {
-  padding: 12px 8px;
+  padding: 14px 10px;
   text-align: center;
   border-bottom: 1px solid var(--border);
   font-variant-numeric: tabular-nums;
@@ -228,7 +231,7 @@ a:hover { text-decoration: underline; }
 .standings-table td:first-child {
   font-weight: 700;
   color: var(--text-muted);
-  width: 36px;
+  width: 40px;
   text-align: center;
 }
 
@@ -237,8 +240,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-left: 14px;
-  overflow: hidden;
+  padding-left: 16px;
 }
 
 /* Team Crests */
@@ -267,15 +269,12 @@ a:hover { text-decoration: underline; }
   flex-direction: column;
   gap: 1px;
   min-width: 0;
-  overflow: hidden;
 }
 .team-name-primary {
   font-weight: 600;
   font-size: 13px;
   color: var(--text);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .team-name-full {
   font-size: 10px;
@@ -460,12 +459,12 @@ a:hover { text-decoration: underline; }
   .team-selector label { display: none; }
   .team-selector select { font-size: 12px; padding: 4px 8px; }
   .hero { padding: 36px 24px 28px; }
-  .hero h1 { font-size: 30px; }
+  .hero h1 { font-size: 28px; }
   .next-game-matchup { flex-direction: column; gap: 10px; }
   .next-game-meta { flex-direction: column; gap: 4px; }
   .meta-sep { display: none; }
-  .standings-table { font-size: 12px; table-layout: auto; }
-  .standings-table th, .standings-table td { padding: 8px 5px; }
+  .standings-table { font-size: 12px; }
+  .standings-table th, .standings-table td { padding: 8px 6px; }
   .team-crest { width: 26px; height: 26px; }
   .team-crest span { font-size: 9px; }
   .team-name-primary { font-size: 12px; }
