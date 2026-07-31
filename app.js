@@ -1,12 +1,15 @@
-/* ========================================
-   SWSL U15 Boys — App Logic
+/* ================================================
+   LEAGUE HUB — Template App Logic
    
-   HOW TO EDIT THIS FILE:
-   - Team names/colors: edit the TEAMS object below
-   - Standings table data: edit the STANDINGS array
-   - Schedule/games: edit the SCHEDULE array
-   - See comments marked with [EDIT] for what to change
-   ======================================== */
+   HOW TO USE THIS TEMPLATE:
+   ─────────────────────────
+   1. Edit the TEAMS object below with your team names/colors
+   2. Edit the STANDINGS array with your table data
+   3. Edit the SCHEDULE array with your game dates
+   4. Update the <option> tags in all 3 HTML files to match your teams
+   
+   Everything else works automatically!
+   ================================================ */
 
 // ═══════════════════════════════════════════
 // TEAM CONFIGURATION [EDIT]
@@ -17,91 +20,81 @@
 // ═══════════════════════════════════════════
 
 const TEAMS = {
-  'western-valley': {
-    name: 'Western Valley U15 Boys',        // [EDIT] Full name (shown under short name)
-    short: 'Western Valley',                 // [EDIT] Short name (shown in table)
-    abbr: 'WV',                              // [EDIT] 2-letter crest code
-    color: '#E63946'                         // [EDIT] Theme color (hex)
+  'team-alpha': {
+    name: 'Team Alpha FC',               // Full name (shown under short name)
+    short: 'Alpha',                       // Short name (shown in table)
+    abbr: 'AL',                           // 2-letter crest code
+    color: '#E63946'                      // Theme color (hex)
   },
-  'fdsa': {
-    name: 'FDSA U15 Division 1',
-    short: 'FDSA',
-    abbr: 'FD',
-    color: '#FFD600'
-  },
-  'charlotte': {
-    name: 'Charlotte United Saints',
-    short: 'Charlotte Saints',
-    abbr: 'CS',
-    color: '#1A1A1A'
-  },
-  'fundy': {
-    name: 'Fundy Downey Ford Mustangs',      // [EDIT] This is the long name — shows as "Fundy Mustangs" short
-    short: 'Fundy Mustangs',
-    abbr: 'FM',
+  'team-bravo': {
+    name: 'Team Bravo United',
+    short: 'Bravo',
+    abbr: 'BR',
     color: '#1565C0'
   },
-  'oasa': {
-    name: 'OASA U15 Boys Division 1',
-    short: 'OASA',
-    abbr: 'OA',
-    color: '#FFC107'
+  'team-charlie': {
+    name: 'Team Charlie City',
+    short: 'Charlie',
+    abbr: 'CH',
+    color: '#FFD600'
   },
-  'hampton': {
-    name: 'Hampton U15AA Boys',
-    short: 'Hampton',
-    abbr: 'HA',
+  'team-delta': {
+    name: 'Team Delta Athletic',
+    short: 'Delta',
+    abbr: 'DL',
+    color: '#2D6A4F'
+  },
+  'team-echo': {
+    name: 'Team Echo Rangers',
+    short: 'Echo',
+    abbr: 'EC',
     color: '#9E9E9E'
   },
 };
 
 // ═══════════════════════════════════════════
 // STANDINGS TABLE [EDIT]
-// To update the table, edit each row in this array.
+// Edit each row with your actual data.
 //
-// ===========================================
-// QUICK MATH GUIDE FOR W, L, GD, PTS:
-// ===========================================
-// • g (Games Played): Total matches played so far (should equal W + T + L).
-// • w (Wins): Matches won. Each win adds 3 points to PTS.
-// • t (Ties/Draws): Matches ended in a draw. Each tie adds 1 point to PTS.
-// • l (Losses): Matches lost. Adds 0 points to PTS.
-// • gf (Goals For): Total goals your team has scored across all games.
-// • ga (Goals Against): Total goals scored *against* your team by opponents.
-// • gd (Goal Difference): Calculated automatically or manually as (gf minus ga). 
-//     - Example: If gf is 18 and ga is 45, gd is -27. If positive, include a plus sign or number (e.g., 58).
-// • pts (Points): Calculated as (w * 3) + (t * 1). Make sure to update this whenever wins or ties change!
+// MATH GUIDE:
+//   g  = Games Played (should equal W + D + L)
+//   w  = Wins    (each win = 3 pts)
+//   d  = Draws   (each draw = 1 pt)
+//   l  = Losses  (0 pts)
+//   gf = Goals For (total goals scored)
+//   ga = Goals Against (total goals conceded)
+//   gd = Goal Difference (gf - ga, can be + or -)
+//   pts = Points ((w × 3) + (d × 1))
 //
-// Order matters! First team in this array = 1st place. Sort descending by PTS.
+// Sort the array: 1st place = first entry, descending by pts.
 // ═══════════════════════════════════════════
 
 const STANDINGS = [
-  { team: 'FDSA U15 Division 1 Boys',        key: 'fdsa',          g: 9, w: 9, t: 0, l: 0, gf: 62, ga: 4,  gd: 58,  pts: 27 },
-  { team: 'Charlotte United Saints',          key: 'charlotte',     g: 8, w: 7, t: 0, l: 1, gf: 50, ga: 7,  gd: 43,  pts: 21 },
-  { team: 'Fundy Downey Ford Mustangs',       key: 'fundy',         g: 9, w: 3, t: 1, l: 5, gf: 19, ga: 45, gd: -26, pts: 10 },
-  { team: 'Western Valley U15 Boys',          key: 'western-valley', g: 8, w: 3, t: 0, l: 5, gf: 18, ga: 45, gd: -27, pts: 9  },
-  { team: 'OASA U15 Boys Division 1',         key: 'oasa',          g: 8, w: 2, t: 1, l: 5, gf: 30, ga: 33, gd: -3,  pts: 7  },
-  { team: 'Hampton U15AA Boys',               key: 'hampton',       g: 8, w: 0, t: 0, l: 8, gf: 5,  ga: 50, gd: -45, pts: 0  },
+  { team: 'Team Alpha FC',       key: 'team-alpha',    g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
+  { team: 'Team Bravo United',   key: 'team-bravo',    g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
+  { team: 'Team Charlie City',   key: 'team-charlie',  g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
+  { team: 'Team Delta Athletic', key: 'team-delta',    g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
+  { team: 'Team Echo Rangers',   key: 'team-echo',     g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
 ];
 
 // ═══════════════════════════════════════════
 // SCHEDULE [EDIT]
-// Add or remove games here. Used on the home page and schedule page.
+// Add your games here. Used on home page and schedule page.
 //
-// Columns:
-//   date    = game date in YYYY-MM-DD format
-//   home    = home team name (display text)
-//   homeKey = must match a key in the TEAMS object above
-//   away    = away team name (display text)
-//   awayKey = must match a key in the TEAMS object above
-//   time    = kickoff time
+//   date    = YYYY-MM-DD format
+//   home    = Home team name (display text)
+//   homeKey = Must match a key in TEAMS above
+//   away    = Away team name (display text)
+//   awayKey = Must match a key in TEAMS above
+//   time    = Kickoff time (display text)
+//   location = Venue name (optional, shown on schedule page)
 // ═══════════════════════════════════════════
 
 const SCHEDULE = [
-  { date: '2026-08-04', home: 'OASA',             homeKey: 'oasa',            away: 'Hampton',         awayKey: 'hampton',         time: '6:30 PM' },
-  { date: '2026-08-04', home: 'FDSA',             homeKey: 'fdsa',            away: 'Charlotte Saints',awayKey: 'charlotte',       time: '7:00 PM' },
-  { date: '2026-08-04', home: 'Fundy Mustangs',   homeKey: 'fundy',           away: 'Western Valley',  awayKey: 'western-valley',  time: '7:00 PM' },
-  { date: '2026-08-06', home: 'Hampton',          homeKey: 'hampton',         away: 'Western Valley',  awayKey: 'western-valley',  time: '7:15 PM' },
+  // Example games — replace with your real schedule:
+  // { date: '2026-09-01', home: 'Alpha', homeKey: 'team-alpha', away: 'Bravo', awayKey: 'team-bravo', time: '7:00 PM', location: 'Main Field' },
+  // { date: '2026-09-01', home: 'Charlie', homeKey: 'team-charlie', away: 'Delta', awayKey: 'team-delta', time: '7:00 PM', location: 'Secondary Field' },
+  // { date: '2026-09-08', home: 'Echo', homeKey: 'team-echo', away: 'Alpha', awayKey: 'team-alpha', time: '6:30 PM', location: 'Park Stadium' },
 ];
 
 // ═══════════════════════════════════════════
@@ -111,15 +104,16 @@ const SCHEDULE = [
 //   1. Add an entry to the TEAMS object (copy an existing one)
 //   2. Add a matching <option value="new-key">New Team</option>
 //      to every <select id="team-select"> in all 3 HTML files
+//   3. Add a row to the STANDINGS array
 //
 // TO UPDATE STANDINGS AFTER A GAME:
 //   1. Edit the relevant row in STANDINGS array
-//   2. Update g (games played), w/t/l, gf, ga, gd, pts
-//   3. PTS formula: (wins × 3) + (draws × 1)
+//   2. Update g, w/d/l, gf, ga, gd, pts
+//   3. PTS = (wins × 3) + (draws × 1)
 //   4. GD = gf - ga
 //   5. Reorder the array so 1st place is first
 //
-// TO ADD A NEW GAME TO SCHEDULE:
+// TO ADD A NEW GAME:
 //   1. Add a new object to the SCHEDULE array
 //   2. Use YYYY-MM-DD for the date
 //   3. Make sure homeKey/awayKey match a TEAMS key
@@ -129,8 +123,9 @@ const SCHEDULE = [
 //   2. Delete from STANDINGS array
 //   3. Delete matching <option> from all HTML selects
 //
-// TO CHANGE THE TEAM SELECTOR COLOR:
+// TO CHANGE TEAM COLORS:
 //   Edit the "color" field in TEAMS (hex code like '#E63946')
+//   The whole site theme changes automatically!
 // ═══════════════════════════════════════════
 
 // ── Helpers ──────────────────────────────
@@ -140,11 +135,11 @@ function getTeam(key) {
 }
 
 function getSelectedTeam() {
-  return localStorage.getItem('swsl-team') || 'western-valley';
+  return localStorage.getItem('league-hub-team') || Object.keys(TEAMS)[0];
 }
 
 function setSelectedTeam(key) {
-  localStorage.setItem('swsl-team', key);
+  localStorage.setItem('league-hub-team', key);
   applyTeamTheme(key);
 }
 
@@ -197,7 +192,7 @@ function renderStandings() {
         </td>
         <td>${row.g}</td>
         <td>${row.w}</td>
-        <td>${row.t}</td>
+        <td>${row.d}</td>
         <td>${row.l}</td>
         <td>${row.gf}</td>
         <td>${row.ga}</td>
@@ -213,6 +208,11 @@ function renderStandings() {
 function renderHomeSchedule() {
   const container = document.getElementById('home-schedule');
   if (!container) return;
+
+  if (SCHEDULE.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);font-size:13px;padding:16px 0;">No games scheduled yet. Edit the SCHEDULE array in app.js to add games.</p>';
+    return;
+  }
 
   const yourTeam = getSelectedTeam();
   container.innerHTML = SCHEDULE.map(g => {
@@ -233,6 +233,12 @@ function renderStandingsFull() {
   renderStandings();
   const container = document.getElementById('full-schedule');
   if (!container) return;
+
+  if (SCHEDULE.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
   const grouped = {};
   SCHEDULE.forEach(g => {
     if (!grouped[g.date]) grouped[g.date] = [];
@@ -251,6 +257,51 @@ function renderStandingsFull() {
   `).join('');
 }
 
+// ── Render Schedule Page ─────────────────
+
+function renderSchedulePage() {
+  const container = document.getElementById('schedule-container');
+  if (!container) return;
+
+  if (SCHEDULE.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);font-size:13px;padding:16px 0;">No games scheduled yet. Edit the SCHEDULE array in app.js to add games.</p>';
+    return;
+  }
+
+  const yourTeam = getSelectedTeam();
+  const grouped = {};
+  SCHEDULE.forEach(g => {
+    if (!grouped[g.date]) grouped[g.date] = [];
+    grouped[g.date].push(g);
+  });
+
+  container.innerHTML = Object.entries(grouped).map(([date, games]) => `
+    <div class="schedule-date-group">
+      <div class="schedule-date-header">${formatDateLong(date)}</div>
+      ${games.map(g => {
+        const isYourGame = g.homeKey === yourTeam || g.awayKey === yourTeam;
+        const ht = getTeam(g.homeKey);
+        const at = getTeam(g.awayKey);
+        return `
+          <div class="schedule-item ${isYourGame ? 'your-game' : ''}">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;">
+              <div class="team-crest" style="--team-color:${ht.color};width:28px;height:28px;"><span style="font-size:9px;">${ht.abbr}</span></div>
+              <span style="font-weight:600;font-size:13px;">${g.home}</span>
+              <span style="color:var(--text-muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">vs</span>
+              <span style="font-weight:600;font-size:13px;">${g.away}</span>
+              <div class="team-crest" style="--team-color:${at.color};width:28px;height:28px;"><span style="font-size:9px;">${at.abbr}</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="color:var(--text-muted);font-size:12px;min-width:70px;text-align:right;">${g.time}</span>
+              <span style="color:var(--text-muted);font-size:12px;min-width:140px;">${g.location || ''}</span>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `).join('');
+}
+
 // ── Init ─────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -262,10 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
       renderStandings();
       renderHomeSchedule();
       renderStandingsFull();
+      renderSchedulePage();
     });
   }
   applyTeamTheme(getSelectedTeam());
   renderStandings();
   renderHomeSchedule();
   renderStandingsFull();
+  renderSchedulePage();
 });

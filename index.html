@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SWSL U15 Boys — Standings & Schedule</title>
+  <title>League Hub — Standings & Schedule</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <span class="logo-mark"></span>
-        <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
+        <span class="logo-text">YOUR LEAGUE <span class="accent">Hub</span></span>
       </a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
@@ -25,12 +25,12 @@
       <div class="team-selector">
         <label for="team-select" class="sr-only">Your Team</label>
         <select id="team-select">
-          <option value="western-valley">Western Valley</option>
-          <option value="fdsa">FDSA</option>
-          <option value="charlotte">Charlotte Saints</option>
-          <option value="fundy">Fundy Mustangs</option>
-          <option value="oasa">OASA</option>
-          <option value="hampton">Hampton</option>
+          <!-- [EDIT] Add your teams here. Value must match a key in app.js TEAMS object -->
+          <option value="team-alpha">Team Alpha</option>
+          <option value="team-bravo">Team Bravo</option>
+          <option value="team-charlie">Team Charlie</option>
+          <option value="team-delta">Team Delta</option>
+          <option value="team-echo">Team Echo</option>
         </select>
       </div>
     </div>
@@ -38,12 +38,13 @@
 
   <header class="hero">
     <div class="hero-content">
-      <h1>SWSL U15 Boys</h1>
-      <p class="hero-sub">South West Soccer League &mdash; Division 1</p>
+      <h1>YOUR LEAGUE</h1>
+      <p class="hero-sub">Replace this with your league name &mdash; Division 1</p>
     </div>
   </header>
 
   <main>
+    <!-- ═══ STANDINGS ═══════════════════════════════════════════════════════ -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Standings</h2>
@@ -65,7 +66,7 @@
                 </tr>
               </thead>
               <tbody id="standings-body">
-                <!-- Dynamically injected via app.js -->
+                <!-- Populated by app.js — edit the STANDINGS array there -->
               </tbody>
             </table>
           </div>
@@ -74,30 +75,31 @@
       </div>
     </section>
 
+    <!-- ═══ NEXT MATCH ══════════════════════════════════════════════════════ -->
     <section class="section section-alt">
       <div class="container">
         <h2 class="section-title">Next Match</h2>
         <div class="next-game" id="next-game">
-          <div class="next-game-date">Thursday, August 6</div>
+          <div class="next-game-date">— Date —</div>
           <div class="next-game-matchup">
             <div class="next-team">
               <div class="team-crest" style="--team-color:#9E9E9E">
-                <span>HA</span>
+                <span>??</span>
               </div>
-              <span class="next-team-name">Hampton U15AA</span>
+              <span class="next-team-name">Team A</span>
             </div>
             <div class="next-vs">vs</div>
             <div class="next-team">
               <div class="team-crest" style="--team-color:#E63946">
-                <span>WV</span>
+                <span>??</span>
               </div>
-              <span class="next-team-name">Western Valley</span>
+              <span class="next-team-name">Team B</span>
             </div>
           </div>
           <div class="next-game-meta">
-            <span>Hampton High School</span>
+            <span>Venue TBA</span>
             <span class="meta-sep">&middot;</span>
-            <span>7:15 PM</span>
+            <span>Time TBA</span>
             <span class="meta-sep">&middot;</span>
             <span>Regular Season</span>
           </div>
@@ -105,9 +107,10 @@
       </div>
     </section>
 
+    <!-- ═══ REMAINING GAMES ════════════════════════════════════════════════ -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Remaining Games</h2>
+        <h2 class="section-title">Upcoming Games</h2>
         <div class="schedule-list" id="home-schedule"></div>
         <a href="schedule.html" class="see-all">View Full Schedule &rarr;</a>
       </div>
@@ -116,8 +119,8 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">Built by <strong>High Tide Studios</strong></p>
-      <p class="footer-sub">Data sourced from Soccer NB</p>
+      <p class="footer-text">Built by <strong>Your Name Here</strong></p>
+      <p class="footer-sub">Data sourced from your league</p>
     </div>
   </footer>
 

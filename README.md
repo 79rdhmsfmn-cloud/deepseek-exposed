@@ -1,47 +1,63 @@
-# ⚽ SWSL U15 Boys Hub
+# ⚽ League Hub — Standings & Schedule Template
 
-Live standings, schedules, and results for the **South West Soccer League U15 Boys Division 1** in New Brunswick, Canada.
+**A clean, modern sports league website template.**
 
-**🔗 Live Site:** [https://79rdhmsfmn-cloud.github.io/deepseek-exposed/](https://79rdhmsfmn-cloud.github.io/deepseek-exposed/)
+Dark mode, team color selector, responsive — drop in your teams and go.
 
-## Features
+## 🎨 Features
 
-- 📊 **Live Standings** — Updated automatically from Soccer NB
-- 📅 **Full Schedule** — All games with dates, times, and Google Maps links
-- ✅ **Recent Results** — Scores with W/L/D indicators
-- 🎨 **Team Color Selector** — Pick your team and the whole site changes to their colors
-- 📱 **Mobile-First** — Works on phones, tablets, and desktop
-- 🌙 **Dark Mode** — Clean, modern ESPN-style design
+- **Dark mode** — clean navy/dark design with glassmorphism
+- **Team color selector** — pick your team, entire site theme changes
+- **Standings table** — sortable, highlighted "your team" row
+- **Schedule view** — grouped by date, your games highlighted
+- **Mobile-first** — looks great on phones (parents love this)
+- **Zero dependencies** — pure HTML/CSS/JS, no build step
 
-## Teams
+## 🚀 Quick Start
 
-| Team | Color |
-|------|-------|
-| Western Valley | 🔴 Red |
-| FDSA | 🔵 Blue |
-| Charlotte Saints | ⚫ Black |
-| Fundy Mustangs | 🟠 Orange |
-| OASA | 🟢 Green |
-| Hampton | ⚪ Grey |
+1. Edit `app.js` — update `TEAMS`, `STANDINGS`, and `SCHEDULE`
+2. Update `<option>` tags in all 3 HTML files to match your teams
+3. Open `index.html` in a browser — done!
 
-## Tech Stack
+## 📁 Files
 
-- **Frontend:** HTML, CSS, JavaScript (vanilla — no frameworks)
-- **Hosting:** GitHub Pages (free)
-- **Data:** Scraped from [competitions.soccernb.org](https://competitions.soccernb.org)
-
-## Data Updates
-
-Standings and schedules are scraped from Soccer NB's competition portal. To update manually, run:
-
-```bash
-python3 scraper.py
+```
+├── index.html      ← Home (standings preview + next match + schedule)
+├── standings.html  ← Full standings table + legend
+├── schedule.html   ← Full schedule grouped by date
+├── app.js          ← All data + rendering logic (EDIT THIS)
+├── style.css       ← All styling (usually don't need to touch)
+├── scraper.py      ← Optional: auto-scrape standings from a website
+└── data/           ← Optional: scraped JSON data
 ```
 
-Or it runs automatically via GitHub Actions every 6 hours.
+## ✏️ What to Edit
 
-## Built By
+Everything you need to change is in **`app.js`**:
 
-**High Tide Studios** — [cloudiai.site](https://cloudiai.site)
+- `TEAMS` — team names, abbreviations, colors
+- `STANDINGS` — table data (points, wins, losses, etc.)
+- `SCHEDULE` — game dates, times, locations
 
-A project by Jaxon from Nackawic, New Brunswick 🇨🇦
+Comments marked `[EDIT]` show exactly what to change.
+
+## 🎨 Customization
+
+- Change team colors in the `TEAMS` object (hex codes)
+- Edit `style.css` to change fonts, layout, or the overall vibe
+- The `--accent` CSS variable updates automatically when you pick a team
+
+## 📱 Hosting
+
+Free options:
+- **GitHub Pages** — push to a repo, enable Pages in settings
+- **Netlify** — drag and drop the folder
+- **Vercel** — connect your repo
+
+## 🛠️ Optional: Auto-Update Scraper
+
+`scraper.py` can scrape standings from a public league website and output JSON. Run it with a cron job to keep your site updated automatically.
+
+---
+
+Built with ☁️ by High Tide Studios
