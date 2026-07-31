@@ -8,109 +8,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .schedule-group { margin-bottom: 32px; }
+    .schedule-group { margin-bottom: 28px; }
     .schedule-date {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
-      color: var(--accent);
+      color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
     .schedule-row {
       display: flex;
       align-items: center;
-      padding: 14px 16px;
+      padding: 12px 16px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      margin-bottom: 8px;
+      border-radius: var(--radius);
+      margin-bottom: 6px;
       gap: 16px;
-      transition: border-color 0.2s;
+      transition: border-color 0.15s;
     }
-    .schedule-row:hover { border-color: var(--accent); }
+    .schedule-row:hover { border-color: var(--border-light); }
     .schedule-row.your-game {
-      border-color: var(--accent);
-      background: var(--accent-glow);
+      border-left: 3px solid var(--accent);
     }
     .schedule-teams {
       flex: 1;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-weight: 600;
+      font-size: 14px;
     }
     .schedule-vs {
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 10px;
+      font-weight: 700;
       color: var(--text-muted);
-      padding: 2px 8px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .schedule-time {
-      color: var(--text-dim);
+      color: var(--text-secondary);
       font-size: 13px;
       min-width: 80px;
       text-align: center;
     }
     .schedule-location {
-      color: var(--text-dim);
+      color: var(--text-secondary);
       font-size: 13px;
     }
-    .schedule-location a { color: var(--text-dim); }
+    .schedule-location a { color: var(--text-secondary); }
     .schedule-location a:hover { color: var(--accent); }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">⚽</span>
-        <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
-      </a>
+      <a href="index.html" class="logo">SWSL <span class="accent">U15 Boys</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="standings.html">Standings</a>
         <a href="schedule.html" class="active">Schedule</a>
       </div>
       <div class="team-selector">
-        <label for="team-select">Your Team:</label>
+        <label for="team-select">Your Team</label>
         <select id="team-select">
-          <option value="western-valley" data-color="#E63946">Western Valley</option>
-          <option value="fdsa" data-color="#FFD600">FDSA</option>
-          <option value="charlotte" data-color="#1A1A1A">Charlotte Saints</option>
-          <option value="fundy" data-color="#1565C0">Fundy Mustangs</option>
-          <option value="oasa" data-color="#FFC107">OASA</option>
-          <option value="hampton" data-color="#9E9E9E">Hampton</option>
+          <option value="western-valley">Western Valley</option>
+          <option value="fdsa">FDSA</option>
+          <option value="charlotte">Charlotte Saints</option>
+          <option value="fundy">Fundy Mustangs</option>
+          <option value="oasa">OASA</option>
+          <option value="hampton">Hampton</option>
         </select>
       </div>
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <header class="hero" style="padding: 40px 20px;">
+  <header class="hero" style="padding: 36px 24px;">
     <div class="hero-content">
-      <h1 style="font-size: 36px;">📅 Schedule</h1>
-      <p class="hero-sub">Upcoming Games — SWSL U15 Boys</p>
+      <h1 style="font-size: 32px;">Schedule</h1>
+      <p class="hero-sub">Remaining Games &mdash; SWSL U15 Boys</p>
     </div>
   </header>
 
-  <!-- SCHEDULE -->
   <section class="section">
-    <div class="container" id="schedule-container">
-      <!-- Populated by JS -->
-    </div>
+    <div class="container" id="schedule-container"></div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>Built with 🔥 by <strong>High Tide Studios</strong></p>
-      <p class="footer-sub">Data sourced from Soccer NB • Updated automatically</p>
+      <p>Built by <strong>High Tide Studios</strong></p>
+      <p class="footer-sub">Data sourced from Soccer NB</p>
     </div>
   </footer>
 
@@ -125,35 +116,34 @@
     function renderSchedule() {
       const container = document.getElementById('schedule-container');
       const yourTeam = localStorage.getItem('swsl-team') || 'western-valley';
-      
-      // Group by date
+
       const grouped = {};
       SCHEDULE.forEach(g => {
         if (!grouped[g.date]) grouped[g.date] = [];
         grouped[g.date].push(g);
       });
-      
+
       container.innerHTML = Object.entries(grouped).map(([date, games]) => {
         const dateObj = new Date(date + 'T12:00:00');
         const dateStr = dateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-        
+
         const rows = games.map(g => {
           const isYourGame = g.homeKey === yourTeam || g.awayKey === yourTeam;
           const locLink = g.map ? `<a href="${g.map}" target="_blank">${g.location}</a>` : g.location;
-          
+
           return `
             <div class="schedule-row ${isYourGame ? 'your-game' : ''}">
               <div class="schedule-teams">
                 <span>${g.home}</span>
-                <span class="schedule-vs">VS</span>
+                <span class="schedule-vs">vs</span>
                 <span>${g.away}</span>
               </div>
               <div class="schedule-time">${g.time}</div>
-              <div class="schedule-location">📍 ${locLink}</div>
+              <div class="schedule-location">${locLink}</div>
             </div>
           `;
         }).join('');
-        
+
         return `
           <div class="schedule-group">
             <div class="schedule-date">${dateStr}</div>
@@ -162,25 +152,26 @@
         `;
       }).join('');
     }
-    
-    // Team selector
+
     const sel = document.getElementById('team-select');
     if (sel) {
       sel.value = localStorage.getItem('swsl-team') || 'western-valley';
       sel.addEventListener('change', (e) => {
         localStorage.setItem('swsl-team', e.target.value);
-        const team = { 'western-valley': '#E63946', 'fdsa': '#FFD600', 'charlotte': '#000', 'fundy': '#1565C0', 'oasa': '#FFC107', 'hampton': '#9E9E9E' };
-        document.documentElement.style.setProperty('--accent', team[e.target.value]);
-        document.documentElement.style.setProperty('--accent-glow', team[e.target.value] + '30');
+        const colors = { 'western-valley': '#E63946', 'fdsa': '#FFD600', 'charlotte': '#1A1A1A', 'fundy': '#1565C0', 'oasa': '#FFC107', 'hampton': '#9E9E9E' };
+        document.documentElement.style.setProperty('--accent', colors[e.target.value]);
+        document.documentElement.style.setProperty('--accent-dim', colors[e.target.value] + '14');
+        document.documentElement.style.setProperty('--accent-mid', colors[e.target.value] + '40');
         renderSchedule();
       });
     }
-    
-    const accent = { 'western-valley': '#E63946', 'fdsa': '#FFD600', 'charlotte': '#000', 'fundy': '#1565C0', 'oasa': '#FFC107', 'hampton': '#9E9E9E' };
-    const current = localStorage.getItem('swsl-team') || 'western-valley';
-    document.documentElement.style.setProperty('--accent', accent[current]);
-    document.documentElement.style.setProperty('--accent-glow', accent[current] + '30');
-    
+
+    const initColors = { 'western-valley': '#E63946', 'fdsa': '#FFD600', 'charlotte': '#1A1A1A', 'fundy': '#1565C0', 'oasa': '#FFC107', 'hampton': '#9E9E9E' };
+    const initTeam = localStorage.getItem('swsl-team') || 'western-valley';
+    document.documentElement.style.setProperty('--accent', initColors[initTeam]);
+    document.documentElement.style.setProperty('--accent-dim', initColors[initTeam] + '14');
+    document.documentElement.style.setProperty('--accent-mid', initColors[initTeam] + '40');
+
     renderSchedule();
   </script>
 </body>

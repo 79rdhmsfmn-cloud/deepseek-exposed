@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SWSL U15 Boys — Live Standings & Schedule</title>
-  <meta name="description" content="Live standings, schedules, and results for the SWSL U15 Boys soccer league in New Brunswick.">
+  <title>SWSL U15 Boys — Standings & Schedule</title>
+  <meta name="description" content="Standings, schedules, and results for the SWSL U15 Boys soccer league in New Brunswick.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <span class="logo-icon">⚽</span>
         <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
       </a>
       <div class="nav-links">
@@ -24,25 +22,23 @@
         <a href="schedule.html">Schedule</a>
       </div>
       <div class="team-selector">
-        <label for="team-select">Your Team:</label>
+        <label for="team-select">Your Team</label>
         <select id="team-select">
-          <option value="western-valley" data-color="#E63946">Western Valley</option>
-          <option value="fdsa" data-color="#FFD600">FDSA</option>
-          <option value="charlotte" data-color="#1A1A1A">Charlotte Saints</option>
-          <option value="fundy" data-color="#1565C0">Fundy Mustangs</option>
-          <option value="oasa" data-color="#FFC107">OASA</option>
-          <option value="hampton" data-color="#9E9E9E">Hampton</option>
+          <option value="western-valley">Western Valley</option>
+          <option value="fdsa">FDSA</option>
+          <option value="charlotte">Charlotte Saints</option>
+          <option value="fundy">Fundy Mustangs</option>
+          <option value="oasa">OASA</option>
+          <option value="hampton">Hampton</option>
         </select>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
-      <div class="hero-badge">LIVE</div>
       <h1>SWSL U15 Boys</h1>
-      <p class="hero-sub">South West Soccer League — Division 1</p>
+      <p class="hero-sub">South West Soccer League &mdash; Division 1</p>
       <div class="hero-stats">
         <div class="stat-card">
           <span class="stat-num" id="stat-teams">6</span>
@@ -60,45 +56,43 @@
     </div>
   </header>
 
-  <!-- NEXT GAME -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">🏟️ Next Game</h2>
+      <h2 class="section-title">Next Match</h2>
       <div class="next-game-card" id="next-game">
         <div class="game-date">Thursday, August 6</div>
         <div class="game-teams">
           <div class="game-team">
             <span class="team-name">Hampton U15AA</span>
-            <span class="team-color" style="background:#9E9E9E"></span>
+            <span class="team-dot" style="background:#9E9E9E"></span>
           </div>
-          <div class="game-vs">VS</div>
+          <div class="game-vs">vs</div>
           <div class="game-team">
+            <span class="team-dot" style="background:#E63946"></span>
             <span class="team-name">Western Valley</span>
-            <span class="team-color" style="background:#E63946"></span>
           </div>
         </div>
         <div class="game-details">
-          <span>📍 <a href="https://www.google.ca/maps/place/45.519031524658,-65.836601257324" target="_blank">Hampton High School</a></span>
-          <span>🕐 7:15–8:45 PM</span>
-          <span>📋 Regular Season</span>
+          <span>Hampton High School</span>
+          <span>7:15 PM</span>
+          <span>Regular Season</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STANDINGS -->
   <section class="section dark">
     <div class="container">
-      <h2 class="section-title">📊 Standings</h2>
+      <h2 class="section-title">Standings</h2>
       <div class="table-wrap">
         <table class="standings-table" id="standings-table">
           <thead>
             <tr>
               <th class="pos">#</th>
               <th class="team-col">Team</th>
-              <th>G</th>
+              <th>P</th>
               <th>W</th>
-              <th>T</th>
+              <th>D</th>
               <th>L</th>
               <th>GF</th>
               <th>GA</th>
@@ -107,34 +101,29 @@
             </tr>
           </thead>
           <tbody id="standings-body">
-            <!-- Populated by JS -->
           </tbody>
         </table>
       </div>
-      <a href="standings.html" class="see-all">View Full Standings →</a>
+      <a href="standings.html" class="see-all">View Full Standings &rarr;</a>
     </div>
   </section>
 
-  <!-- RECENT RESULTS -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">✅ Recent Results</h2>
+      <h2 class="section-title">Recent Results</h2>
       <div class="results-grid" id="results-grid">
-        <!-- Populated by JS -->
       </div>
-      <a href="schedule.html" class="see-all">View Full Schedule →</a>
+      <a href="schedule.html" class="see-all">View Full Schedule &rarr;</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>Built with 🔥 by <strong>High Tide Studios</strong></p>
-      <p class="footer-sub">Data sourced from Soccer NB • Updated automatically</p>
+      <p>Built by <strong>High Tide Studios</strong></p>
+      <p class="footer-sub">Data sourced from Soccer NB</p>
     </div>
   </footer>
 
-  <script src="data/standings.json" type="application/json" id="standings-data"></script>
   <script src="app.js"></script>
 </body>
 </html>
