@@ -4,8 +4,8 @@
 
 /* -- Variables (Clean Black & White / Sketch Palette) -- */
 :root {
-  --bg: #FFFFFF;
-  --surface: #FFFFFF;
+  --bg: #1a1a1a;
+  --surface: #FFFFA1;
   --surface-2: #000000;
 
   --text: #000000;
