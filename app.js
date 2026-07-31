@@ -70,11 +70,20 @@ const TEAMS = {
 // ═══════════════════════════════════════════
 
 const STANDINGS = [
-  { team: 'Team Alpha FC',       key: 'team-alpha',    g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
-  { team: 'Team Bravo United',   key: 'team-bravo',    g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
-  { team: 'Team Charlie City',   key: 'team-charlie',  g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
-  { team: 'Team Delta Athletic', key: 'team-delta',    g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
-  { team: 'Team Echo Rangers',   key: 'team-echo',     g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0 },
+  { team: 'Woodstock High School Soccer (CH)', key: 'woodstock', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Carleton North High School Soccer (CH)', key: 'carleton', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Fredericton Christian Academy Soccer (CH)', key: 'fca', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Saint Mary’s Academy Soccer (CH)', key: 'sma', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'John Caldwell School Soccer (CH)', key: 'johncaldwell', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Hampton High School Soccer (CH)', key: 'hampton', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Hartland Community School Soccer (CH)', key: 'hartland', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Harvey High School Soccer (CH)', key: 'harvey', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Sir James Dunn Academy Soccer (CH)', key: 'sjda', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'St. Stephen High School Soccer (CH)', key: 'ststephen', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Fundy Middle and High School Soccer (CH)', key: 'fundy', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'McAdam High School Soccer (CH)', key: 'mcadam', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Nackawic High School Soccer (CH)', key: 'nackawic', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+  { team: 'Southern Victoria High School Soccer (CH)', key: 'southernvictoria', g: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 }
 ];
 
 // ═══════════════════════════════════════════
