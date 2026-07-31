@@ -1,4 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standings — League Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">YOUR LEAGUE <span class="accent">Hub</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="standings.html" class="active">Standings</a>
+        <a href="schedule.html">Schedule</a>
+      </div>
       <div class="team-selector">
+        <label for="team-select">Your Team</label>
+        <select id="team-select">
+          <!-- [EDIT] Match these to your TEAMS in app.js -->
+                <div class="team-selector">
         <label for="team-select">Your Team</label>
         <select id="team-select">
           <option value="woodstock">Woodstock High School</option>
@@ -17,3 +45,60 @@
           <option value="southernvictoria">Southern Victoria High School</option>
         </select>
       </div>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 36px 24px;">
+    <div class="hero-content">
+      <h1 style="font-size: 32px;">Standings</h1>
+      <p class="hero-sub">Your League Name &mdash; Division 1 &mdash; Regular Season</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="table-wrap">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th class="col-pos">#</th>
+              <th class="col-team">Team</th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th class="col-pts">PTS</th>
+            </tr>
+          </thead>
+          <tbody id="standings-body"></tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><strong>P</strong> Played</span>
+        <span><strong>W</strong> Won</span>
+        <span><strong>D</strong> Drawn</span>
+        <span><strong>L</strong> Lost</span>
+        <span><strong>GF</strong> Goals For</span>
+        <span><strong>GA</strong> Goals Against</span>
+        <span><strong>GD</strong> Goal Difference</span>
+        <span><strong>PTS</strong> Points</span>
+      </div>
+      <div id="full-schedule" style="margin-top:40px;"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">Built by <strong>Your Name Here</strong></p>
+      <p class="footer-sub">Data sourced from your league</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
