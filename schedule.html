@@ -82,11 +82,11 @@
         <label for="team-select">Your Team:</label>
         <select id="team-select">
           <option value="western-valley" data-color="#E63946">Western Valley</option>
-          <option value="fdsa" data-color="#1E88E5">FDSA</option>
-          <option value="charlotte" data-color="#000000">Charlotte Saints</option>
-          <option value="fundy" data-color="#FF8F00">Fundy Mustangs</option>
-          <option value="oasa" data-color="#43A047">OASA</option>
-          <option value="hampton" data-color="#757575">Hampton</option>
+          <option value="fdsa" data-color="#FFD600">FDSA</option>
+          <option value="charlotte" data-color="#1A1A1A">Charlotte Saints</option>
+          <option value="fundy" data-color="#1565C0">Fundy Mustangs</option>
+          <option value="oasa" data-color="#FFC107">OASA</option>
+          <option value="hampton" data-color="#9E9E9E">Hampton</option>
         </select>
       </div>
     </div>
@@ -169,14 +169,14 @@
       sel.value = localStorage.getItem('swsl-team') || 'western-valley';
       sel.addEventListener('change', (e) => {
         localStorage.setItem('swsl-team', e.target.value);
-        const team = { 'western-valley': '#E63946', 'fdsa': '#1E88E5', 'charlotte': '#000', 'fundy': '#FF8F00', 'oasa': '#43A047', 'hampton': '#757575' };
+        const team = { 'western-valley': '#E63946', 'fdsa': '#FFD600', 'charlotte': '#000', 'fundy': '#1565C0', 'oasa': '#FFC107', 'hampton': '#9E9E9E' };
         document.documentElement.style.setProperty('--accent', team[e.target.value]);
         document.documentElement.style.setProperty('--accent-glow', team[e.target.value] + '30');
         renderSchedule();
       });
     }
     
-    const accent = { 'western-valley': '#E63946', 'fdsa': '#1E88E5', 'charlotte': '#000', 'fundy': '#FF8F00', 'oasa': '#43A047', 'hampton': '#757575' };
+    const accent = { 'western-valley': '#E63946', 'fdsa': '#FFD600', 'charlotte': '#000', 'fundy': '#1565C0', 'oasa': '#FFC107', 'hampton': '#9E9E9E' };
     const current = localStorage.getItem('swsl-team') || 'western-valley';
     document.documentElement.style.setProperty('--accent', accent[current]);
     document.documentElement.style.setProperty('--accent-glow', accent[current] + '30');

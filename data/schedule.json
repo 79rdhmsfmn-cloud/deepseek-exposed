@@ -1,0 +1,49 @@
+{
+  "updated": "2026-07-30T20:05:15.045537",
+  "schedule": [
+    {
+      "date": "2026-08-04",
+      "home": "OASA U15 Boys Division 1",
+      "away": "Hampton U15AA Boys (Grey / Grey)",
+      "time": "6:30-8:00 PM",
+      "location": "Mackenzie Grass field",
+      "map": "",
+      "notes": "022 - Regular Season",
+      "homeKey": "oasa",
+      "awayKey": "hampton"
+    },
+    {
+      "date": "2026-08-04",
+      "home": "FDSA U15 Division 1 Boys",
+      "away": "U15B SWSL Charlotte United Saints (Black / /)",
+      "time": "7:00-8:30 PM",
+      "location": "Grant Harvey Turf",
+      "map": "",
+      "notes": "024 - Regular Season",
+      "homeKey": "fdsa",
+      "awayKey": "charlotte"
+    },
+    {
+      "date": "2026-08-04",
+      "home": "Fundy Downey Ford Mustangs U15 AA Boys",
+      "away": "Western Valley U15 Boys (Red / White)",
+      "time": "7:00-8:30 PM",
+      "location": "Usher Miller Field#1 (KVHS)",
+      "map": "",
+      "notes": "023 - Regular Season",
+      "homeKey": "fundy",
+      "awayKey": "western-valley"
+    },
+    {
+      "date": "2026-08-06",
+      "home": "Hampton U15AA Boys (Grey / Grey)",
+      "away": "Western Valley U15 Boys (Red / White)",
+      "time": "7:15-8:45 PM",
+      "location": "Hampton High School",
+      "map": "",
+      "notes": "011 - Regular Season",
+      "homeKey": "hampton",
+      "awayKey": "western-valley"
+    }
+  ]
+}

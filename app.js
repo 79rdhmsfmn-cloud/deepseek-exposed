@@ -4,11 +4,11 @@
 
 const TEAMS = {
   'western-valley': { name: 'Western Valley', color: '#E63946', abbr: 'WV' },
-  'fdsa':           { name: 'FDSA', color: '#1E88E5', abbr: 'FD' },
-  'charlotte':      { name: 'Charlotte Saints', color: '#000000', abbr: 'CS' },
-  'fundy':          { name: 'Fundy Mustangs', color: '#FF8F00', abbr: 'FM' },
-  'oasa':           { name: 'OASA', color: '#43A047', abbr: 'OA' },
-  'hampton':        { name: 'Hampton', color: '#757575', abbr: 'HA' },
+  'fdsa':           { name: 'FDSA', color: '#FFD600', abbr: 'FD' },
+  'charlotte':      { name: 'Charlotte Saints', color: '#1A1A1A', abbr: 'CS' },
+  'fundy':          { name: 'Fundy Mustangs', color: '#1565C0', abbr: 'FM' },
+  'oasa':           { name: 'OASA', color: '#FFC107', abbr: 'OA' },
+  'hampton':        { name: 'Hampton', color: '#9E9E9E', abbr: 'HA' },
 };
 
 // Hardcoded data (will be replaced by scraper JSON)
