@@ -1,5 +1,5 @@
 /* ================================================
-   LEAGUE HUB — Modern Dark Edition
+   LEAGUE HUB — Nackawic Nighthawks Edition
    
    Anton + Space Grotesk
    ================================================ */
@@ -47,7 +47,7 @@ body {
   top: 0;
   z-index: 100;
   background: var(--bg);
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--border);
 }
 
 .nav-inner {
@@ -100,7 +100,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent);
+  color: var(--text);
   background: var(--border-faint);
 }
 
@@ -116,12 +116,12 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .06em;
-  color: var(--accent);
+  color: var(--text-muted);
 }
 
 .team-selector select {
   padding: 6px 12px;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--border);
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -135,7 +135,7 @@ body {
 
 /* -- Hero -- */
 .hero {
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--border);
   padding: 60px 24px;
   text-align: center;
   background: linear-gradient(180deg, #611C2B 0%, var(--bg) 100%);
@@ -148,7 +148,7 @@ body {
   letter-spacing: .01em;
   text-transform: uppercase;
   color: var(--accent);
-  text-shadow: 0 2px 20px rgba(244, 208, 20, 0.25);
+  text-shadow: 0 2px 16px rgba(244, 208, 20, 0.2);
 }
 
 .hero-sub {
@@ -203,7 +203,7 @@ body {
 }
 
 .standings-table thead {
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--border);
   background: #611C2B;
 }
 
@@ -244,15 +244,16 @@ body {
 }
 
 
-/* -- Your Team Row -- */
+/* -- Your Team Row (Locked to Nackawic Gold & Burgundy Branding) -- */
 .standings-table .your-team {
   background: var(--accent);
-  color: var(--bg);
+  color: #111111;
 }
 
 .standings-table .your-team td {
-  color: var(--bg);
+  color: #111111;
   border-color: #C5A10A;
+  font-weight: 700;
 }
 
 .standings-table .your-team:hover {
@@ -270,7 +271,7 @@ body {
 .team-crest {
   width: 32px;
   height: 32px;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--border);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -284,8 +285,8 @@ body {
 }
 
 .your-team .team-crest {
-  border-color: var(--bg);
-  color: var(--bg);
+  border-color: #111111;
+  color: #111111;
 }
 
 .team-info {
@@ -304,15 +305,13 @@ body {
 }
 
 .your-team .team-name-full {
-  color: #333;
+  color: #333333;
 }
 
 
 .col-pos {
   width: 40px;
   text-align: center;
-  color: var(--accent);
-  font-weight: 700;
 }
 
 .col-team {
@@ -322,14 +321,12 @@ body {
 .col-pts {
   text-align: center;
   font-weight: 800;
-  color: var(--accent);
 }
 
 .standings-table td.pts {
   font-weight: 800;
   font-size: 14px;
   text-align: center;
-  color: var(--accent);
 }
 
 
@@ -346,9 +343,11 @@ body {
 .legend strong {
   color: var(--text);
 }
+
+
 /* -- Next Match -- */
 .next-game {
-  border: 2px solid var(--accent);
+  border: 2px solid var(--border);
   padding: 32px;
   text-align: center;
   background: var(--surface);
@@ -393,7 +392,7 @@ body {
   font-family: var(--font-heading);
   font-size: 16px;
   letter-spacing: .1em;
-  color: var(--accent);
+  color: var(--text-muted);
 }
 
 .next-game-meta {
@@ -435,7 +434,7 @@ body {
 
 .schedule-item.your-game {
   background: var(--accent);
-  color: var(--bg);
+  color: #111111;
   border-color: var(--accent);
 }
 
@@ -451,7 +450,7 @@ body {
 }
 
 .your-game .si-date {
-  color: #333;
+  color: #333333;
 }
 
 .si-matchup {
@@ -470,7 +469,7 @@ body {
 }
 
 .your-game .si-time {
-  color: #333;
+  color: #333333;
 }
 
 
@@ -485,8 +484,8 @@ body {
   letter-spacing: .05em;
   text-transform: uppercase;
   padding: 10px 16px;
-  border-bottom: 2px solid var(--accent);
-  color: var(--accent);
+  border-bottom: 2px solid var(--border);
+  color: var(--text);
   background: #611C2B;
 }
 
@@ -511,7 +510,7 @@ body {
 
 /* -- Footer -- */
 .footer {
-  border-top: 2px solid var(--accent);
+  border-top: 2px solid var(--border);
   padding: 32px 24px;
   text-align: center;
   margin-top: 40px;
@@ -520,7 +519,7 @@ body {
 
 .footer-text {
   font-size: 13px;
-  color: var(--accent);
+  color: var(--text);
   font-weight: 600;
 }
 
