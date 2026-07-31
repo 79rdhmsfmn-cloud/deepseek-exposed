@@ -2,28 +2,34 @@
    LEAGUE HUB — Nackawic Nighthawks Edition
    
    Anton + Space Grotesk
+   Burgundy + Gold Identity
    ================================================ */
 
 /* -- Variables -- */
 :root {
-  --bg: #111111;
-  --surface: #161B22;
-  --surface-2: #1E242D;
+  --bg: #0B0B0D;
+  --surface: #141217;
+  --surface-2: #1C1820;
 
-  --text: #F5F7FA;
-  --text-muted: #A4ACB8;
-  --text-light: #6B7280;
+  --text: #F7F5F2;
+  --text-muted: #B0A8AE;
+  --text-light: #777077;
+
+  --burgundy: #611C2B;
+  --burgundy-dark: #3B111A;
+  --burgundy-light: #7E2437;
+
+  --gold: #F4D014;
+  --gold-dark: #C5A10A;
 
   --border: #611C2B;
   --border-light: #7E2437;
-  --border-faint: #3B111A;
-
-  --accent: #F4D014;
-  --accent-rgb: 244,208,20;
+  --border-faint: #241017;
 
   --font-heading: 'Anton', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
 }
+
 
 /* -- Reset -- */
 *, *::before, *::after {
@@ -31,6 +37,7 @@
   margin: 0;
   padding: 0;
 }
+
 
 body {
   background: var(--bg);
@@ -41,14 +48,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
 /* -- Nav -- */
 .nav {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--bg);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--burgundy);
 }
+
 
 .nav-inner {
   max-width: 1200px;
@@ -59,6 +68,7 @@ body {
   gap: 24px;
 }
 
+
 .logo {
   display: flex;
   align-items: center;
@@ -67,26 +77,24 @@ body {
   color: var(--text);
   font-family: var(--font-heading);
   font-size: 24px;
-  letter-spacing: 0.02em;
+  letter-spacing: .02em;
   text-transform: uppercase;
 }
+
 
 .logo-mark {
   width: 10px;
   height: 10px;
-  background: var(--accent);
+  background: var(--gold);
   border-radius: 2px;
 }
 
-.logo .accent {
-  font-weight: 400;
-  color: var(--accent);
-}
 
 .nav-links {
   display: flex;
   gap: 4px;
 }
+
 
 .nav-links a {
   color: var(--text-muted);
@@ -98,11 +106,13 @@ body {
   transition: all .15s ease;
 }
 
+
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text);
   background: var(--border-faint);
 }
+
 
 .team-selector {
   margin-left: auto;
@@ -110,6 +120,7 @@ body {
   align-items: center;
   gap: 8px;
 }
+
 
 .team-selector label {
   font-size: 11px;
@@ -119,9 +130,10 @@ body {
   color: var(--text-muted);
 }
 
+
 .team-selector select {
   padding: 6px 12px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--burgundy);
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -133,54 +145,67 @@ body {
 }
 
 
+.team-selector select:focus {
+  box-shadow: 0 0 0 2px var(--gold);
+}
 /* -- Hero -- */
 .hero {
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--burgundy);
   padding: 60px 24px;
   text-align: center;
-  background: linear-gradient(180deg, #611C2B 0%, var(--bg) 100%);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(97, 28, 43, 0.85),
+      var(--bg)
+    );
 }
+
 
 .hero-content h1 {
   font-family: var(--font-heading);
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: .02em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 2px 16px rgba(244, 208, 20, 0.2);
+  color: var(--gold);
 }
+
 
 .hero-sub {
   margin-top: 10px;
   font-size: 15px;
   color: var(--text-muted);
-  font-weight: 400;
   letter-spacing: .02em;
 }
+
+
 /* -- Section -- */
 .section {
   padding: 40px 24px;
 }
 
+
 .section-alt {
-  border-top: 2px solid var(--border);
-  border-bottom: 2px solid var(--border);
-  background: #151113;
+  border-top: 2px solid var(--burgundy);
+  border-bottom: 2px solid var(--burgundy);
+  background: var(--surface);
 }
+
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
+
 .section-title {
   font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: .02em;
-  color: var(--text);
+  letter-spacing: .04em;
+  color: var(--gold);
   margin-bottom: 20px;
 }
 
@@ -190,11 +215,12 @@ body {
   overflow-x: auto;
 }
 
+
 .table-wrap {
-  border: 2px solid var(--border);
-  border-radius: 0;
+  border: 2px solid var(--burgundy);
   overflow: hidden;
 }
+
 
 .standings-table {
   width: 100%;
@@ -202,10 +228,12 @@ body {
   font-size: 13px;
 }
 
+
 .standings-table thead {
-  border-bottom: 2px solid var(--border);
-  background: #611C2B;
+  border-bottom: 2px solid var(--burgundy);
+  background: var(--burgundy);
 }
+
 
 .standings-table th {
   font-family: var(--font-body);
@@ -213,15 +241,17 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
-  color: var(--accent);
+  color: var(--gold);
   padding: 12px;
   text-align: left;
-  border-right: 1px solid var(--border-light);
+  border-right: 1px solid var(--burgundy-light);
 }
+
 
 .standings-table th:last-child {
   border-right: none;
 }
+
 
 .standings-table td {
   padding: 12px;
@@ -231,30 +261,35 @@ body {
   color: var(--text);
 }
 
+
 .standings-table td:last-child {
   border-right: none;
 }
 
+
 .standings-table tbody tr:last-child td {
   border-bottom: none;
 }
+
 
 .standings-table tbody tr:hover {
   background: var(--border-faint);
 }
 
 
-/* -- Your Team Row (Locked to Nackawic Gold & Burgundy Branding) -- */
+/* -- Your Team Row -- */
 .standings-table .your-team {
-  background: var(--accent);
+  background: var(--gold);
   color: #111111;
 }
 
+
 .standings-table .your-team td {
   color: #111111;
-  border-color: #C5A10A;
+  border-color: var(--gold-dark);
   font-weight: 700;
 }
+
 
 .standings-table .your-team:hover {
   background: #FFD91A;
@@ -268,10 +303,11 @@ body {
   gap: 10px;
 }
 
+
 .team-crest {
   width: 32px;
   height: 32px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--burgundy);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -279,30 +315,35 @@ body {
   font-family: var(--font-heading);
   font-size: 14px;
   letter-spacing: .05em;
-  color: var(--accent);
+  color: var(--gold);
   background: var(--bg);
   flex-shrink: 0;
 }
+
 
 .your-team .team-crest {
   border-color: #111111;
   color: #111111;
 }
 
+
 .team-info {
   display: flex;
   flex-direction: column;
 }
+
 
 .team-name-primary {
   font-weight: 700;
   font-size: 13px;
 }
 
+
 .team-name-full {
   font-size: 11px;
   color: var(--text-muted);
 }
+
 
 .your-team .team-name-full {
   color: #333333;
@@ -314,14 +355,17 @@ body {
   text-align: center;
 }
 
+
 .col-team {
   min-width: 160px;
 }
+
 
 .col-pts {
   text-align: center;
   font-weight: 800;
 }
+
 
 .standings-table td.pts {
   font-weight: 800;
@@ -340,27 +384,28 @@ body {
   color: var(--text-muted);
 }
 
+
 .legend strong {
-  color: var(--text);
+  color: var(--gold);
 }
-
-
 /* -- Next Match -- */
 .next-game {
-  border: 2px solid var(--border);
+  border: 2px solid var(--burgundy);
   padding: 32px;
   text-align: center;
   background: var(--surface);
 }
+
 
 .next-game-date {
   font-family: var(--font-heading);
   font-size: 16px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--gold);
   margin-bottom: 16px;
 }
+
 
 .next-game-matchup {
   display: flex;
@@ -369,6 +414,7 @@ body {
   gap: 24px;
 }
 
+
 .next-team {
   display: flex;
   flex-direction: column;
@@ -376,17 +422,20 @@ body {
   gap: 8px;
 }
 
+
 .next-team .team-crest {
   width: 48px;
   height: 48px;
   font-size: 18px;
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--gold);
+  color: var(--gold);
 }
+
 
 .next-team-name {
   font-weight: 700;
 }
+
 
 .next-vs {
   font-family: var(--font-heading);
@@ -395,10 +444,12 @@ body {
   color: var(--text-muted);
 }
 
+
 .next-game-meta {
   font-size: 12px;
   color: var(--text-muted);
 }
+
 
 .meta-sep {
   margin: 0 6px;
@@ -413,6 +464,7 @@ body {
   gap: 1px;
 }
 
+
 .schedule-item {
   display: flex;
   align-items: center;
@@ -424,23 +476,28 @@ body {
   gap: 16px;
 }
 
+
 .schedule-item:last-child {
   border-bottom: 1px solid var(--border-light);
 }
+
 
 .schedule-item:hover {
   background: var(--border-faint);
 }
 
+
 .schedule-item.your-game {
-  background: var(--accent);
+  background: var(--gold);
   color: #111111;
-  border-color: var(--accent);
+  border-color: var(--gold);
 }
 
+
 .schedule-item.your-game + .schedule-item {
-  border-top-color: var(--accent);
+  border-top-color: var(--gold);
 }
+
 
 .si-date {
   font-size: 12px;
@@ -449,9 +506,11 @@ body {
   min-width: 80px;
 }
 
+
 .your-game .si-date {
   color: #333333;
 }
+
 
 .si-matchup {
   font-weight: 600;
@@ -460,6 +519,7 @@ body {
   text-align: center;
 }
 
+
 .si-time {
   font-size: 12px;
   font-weight: 600;
@@ -467,6 +527,7 @@ body {
   min-width: 70px;
   text-align: right;
 }
+
 
 .your-game .si-time {
   color: #333333;
@@ -478,15 +539,16 @@ body {
   margin-bottom: 32px;
 }
 
+
 .schedule-date-header {
   font-family: var(--font-heading);
   font-size: 18px;
   letter-spacing: .05em;
   text-transform: uppercase;
   padding: 10px 16px;
-  border-bottom: 2px solid var(--border);
-  color: var(--text);
-  background: #611C2B;
+  border-bottom: 2px solid var(--burgundy);
+  color: var(--gold);
+  background: var(--burgundy);
 }
 
 
@@ -496,12 +558,13 @@ body {
   margin-top: 20px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--gold);
   text-decoration: none;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--gold);
   padding-bottom: 2px;
   transition: opacity .15s ease;
 }
+
 
 .see-all:hover {
   opacity: .6;
@@ -510,18 +573,20 @@ body {
 
 /* -- Footer -- */
 .footer {
-  border-top: 2px solid var(--border);
+  border-top: 2px solid var(--burgundy);
   padding: 32px 24px;
   text-align: center;
   margin-top: 40px;
-  background: #151113;
+  background: var(--surface);
 }
+
 
 .footer-text {
   font-size: 13px;
   color: var(--text);
   font-weight: 600;
 }
+
 
 .footer-sub {
   font-size: 11px;
@@ -538,31 +603,38 @@ body {
     gap: 12px;
   }
 
+
   .nav-links {
     display: none;
   }
+
 
   .team-selector {
     margin-left: 0;
     width: 100%;
   }
 
+
   .team-selector select {
     flex: 1;
   }
+
 
   .hero {
     padding: 40px 16px;
   }
 
+
   .section {
     padding: 32px 16px;
   }
+
 
   .standings-table th,
   .standings-table td {
     padding: 8px 6px;
   }
+
 
   .team-crest {
     width: 26px;
@@ -570,18 +642,22 @@ body {
     font-size: 11px;
   }
 
+
   .next-game {
     padding: 24px 16px;
   }
+
 
   .next-game-matchup {
     gap: 16px;
   }
 
+
   .next-team .team-crest {
     width: 40px;
     height: 40px;
   }
+
 
   .schedule-item {
     flex-wrap: wrap;
@@ -595,6 +671,7 @@ body {
   .col-team {
     min-width: 120px;
   }
+
 
   .standings-table th:nth-child(n+4):nth-child(-n+8),
   .standings-table td:nth-child(n+4):nth-child(-n+8) {
