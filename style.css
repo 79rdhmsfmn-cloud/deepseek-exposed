@@ -148,36 +148,6 @@ body {
 .team-selector select:focus {
   box-shadow: 0 0 0 2px var(--gold);
 }
-/* -- Hero -- */
-.hero {
-  border-bottom: 2px solid var(--burgundy);
-  padding: 60px 24px;
-  text-align: center;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(97, 28, 43, 0.85),
-      var(--bg)
-    );
-}
-
-
-.hero-content h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(40px, 6vw, 64px);
-  font-weight: 400;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-
-.hero-sub {
-  margin-top: 10px;
-  font-size: 15px;
-  color: var(--text-muted);
-  letter-spacing: .02em;
-}
 
 
 /* -- Section -- */
@@ -388,6 +358,8 @@ body {
 .legend strong {
   color: var(--gold);
 }
+
+
 /* -- Next Match -- */
 .next-game {
   border: 2px solid var(--burgundy);
@@ -617,11 +589,6 @@ body {
 
   .team-selector select {
     flex: 1;
-  }
-
-
-  .hero {
-    padding: 40px 16px;
   }
 
 
