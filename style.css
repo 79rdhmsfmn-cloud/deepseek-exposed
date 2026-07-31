@@ -47,7 +47,7 @@ body {
   top: 0;
   z-index: 100;
   background: var(--bg);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--accent);
 }
 
 .nav-inner {
@@ -100,7 +100,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text);
+  color: var(--accent);
   background: var(--border-faint);
 }
 
@@ -116,12 +116,12 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .06em;
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 .team-selector select {
   padding: 6px 12px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--accent);
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -135,7 +135,7 @@ body {
 
 /* -- Hero -- */
 .hero {
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--accent);
   padding: 60px 24px;
   text-align: center;
   background: linear-gradient(180deg, #611C2B 0%, var(--bg) 100%);
@@ -147,7 +147,8 @@ body {
   font-weight: 400;
   letter-spacing: .01em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--accent);
+  text-shadow: 0 2px 20px rgba(244, 208, 20, 0.25);
 }
 
 .hero-sub {
@@ -202,7 +203,7 @@ body {
 }
 
 .standings-table thead {
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--accent);
   background: #611C2B;
 }
 
@@ -212,7 +213,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
-  color: var(--text);
+  color: var(--accent);
   padding: 12px;
   text-align: left;
   border-right: 1px solid var(--border-light);
@@ -269,7 +270,7 @@ body {
 .team-crest {
   width: 32px;
   height: 32px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--accent);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -277,7 +278,7 @@ body {
   font-family: var(--font-heading);
   font-size: 14px;
   letter-spacing: .05em;
-  color: var(--text);
+  color: var(--accent);
   background: var(--bg);
   flex-shrink: 0;
 }
@@ -310,6 +311,8 @@ body {
 .col-pos {
   width: 40px;
   text-align: center;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .col-team {
@@ -319,12 +322,14 @@ body {
 .col-pts {
   text-align: center;
   font-weight: 800;
+  color: var(--accent);
 }
 
 .standings-table td.pts {
   font-weight: 800;
   font-size: 14px;
   text-align: center;
+  color: var(--accent);
 }
 
 
@@ -343,7 +348,7 @@ body {
 }
 /* -- Next Match -- */
 .next-game {
-  border: 2px solid var(--border);
+  border: 2px solid var(--accent);
   padding: 32px;
   text-align: center;
   background: var(--surface);
@@ -377,6 +382,7 @@ body {
   height: 48px;
   font-size: 18px;
   border-color: var(--accent);
+  color: var(--accent);
 }
 
 .next-team-name {
@@ -387,7 +393,7 @@ body {
   font-family: var(--font-heading);
   font-size: 16px;
   letter-spacing: .1em;
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 .next-game-meta {
@@ -479,8 +485,8 @@ body {
   letter-spacing: .05em;
   text-transform: uppercase;
   padding: 10px 16px;
-  border-bottom: 2px solid var(--border);
-  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
   background: #611C2B;
 }
 
@@ -505,7 +511,7 @@ body {
 
 /* -- Footer -- */
 .footer {
-  border-top: 2px solid var(--border);
+  border-top: 2px solid var(--accent);
   padding: 32px 24px;
   text-align: center;
   margin-top: 40px;
@@ -514,7 +520,7 @@ body {
 
 .footer-text {
   font-size: 13px;
-  color: var(--text);
+  color: var(--accent);
   font-weight: 600;
 }
 
