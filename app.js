@@ -3,12 +3,12 @@
    ======================================== */
 
 const TEAMS = {
-  'western-valley': { name: 'Western Valley', color: '#E63946' },
-  'fdsa':           { name: 'FDSA', color: '#FFD600' },
-  'charlotte':      { name: 'Charlotte Saints', color: '#1A1A1A' },
-  'fundy':          { name: 'Fundy Mustangs', color: '#1565C0' },
-  'oasa':           { name: 'OASA', color: '#FFC107' },
-  'hampton':        { name: 'Hampton', color: '#9E9E9E' },
+  'western-valley': { name: 'Western Valley U15 Boys', short: 'Western Valley', abbr: 'WV', color: '#E63946' },
+  'fdsa':           { name: 'FDSA U15 Division 1', short: 'FDSA', abbr: 'FD', color: '#FFD600' },
+  'charlotte':      { name: 'Charlotte United Saints', short: 'Charlotte Saints', abbr: 'CS', color: '#1A1A1A' },
+  'fundy':          { name: 'Fundy Downey Ford Mustangs', short: 'Fundy Mustangs', abbr: 'FM', color: '#1565C0' },
+  'oasa':           { name: 'OASA U15 Boys Division 1', short: 'OASA', abbr: 'OA', color: '#FFC107' },
+  'hampton':        { name: 'Hampton U15AA Boys', short: 'Hampton', abbr: 'HA', color: '#9E9E9E' },
 };
 
 const STANDINGS = [
@@ -20,15 +20,18 @@ const STANDINGS = [
   { team: 'Hampton U15AA Boys', key: 'hampton', g: 8, w: 0, t: 0, l: 8, gf: 5, ga: 50, gd: -45, pts: 0 },
 ];
 
-const RESULTS = [
-  { date: '2026-07-29', home: 'Western Valley', homeKey: 'western-valley', homeScore: 5, away: 'Fundy Mustangs', awayKey: 'fundy', awayScore: 1 },
-  { date: '2026-07-29', home: 'Charlotte Saints', homeKey: 'charlotte', homeScore: 7, away: 'Western Valley', awayKey: 'western-valley', awayScore: 1 },
-  { date: '2026-07-29', home: 'OASA', homeKey: 'oasa', homeScore: 2, away: 'FDSA', awayKey: 'fdsa', awayScore: 6 },
-  { date: '2026-07-24', home: 'Western Valley', homeKey: 'western-valley', homeScore: 3, away: 'FDSA', awayKey: 'fdsa', awayScore: 8 },
-  { date: '2026-07-24', home: 'Fundy Mustangs', homeKey: 'fundy', homeScore: 0, away: 'Charlotte Saints', awayKey: 'charlotte', awayScore: 5 },
+const SCHEDULE = [
+  { date: '2026-08-04', home: 'OASA', homeKey: 'oasa', away: 'Hampton', awayKey: 'hampton', time: '6:30 PM' },
+  { date: '2026-08-04', home: 'FDSA', homeKey: 'fdsa', away: 'Charlotte Saints', awayKey: 'charlotte', time: '7:00 PM' },
+  { date: '2026-08-04', home: 'Fundy Mustangs', homeKey: 'fundy', away: 'Western Valley', awayKey: 'western-valley', time: '7:00 PM' },
+  { date: '2026-08-06', home: 'Hampton', homeKey: 'hampton', away: 'Western Valley', awayKey: 'western-valley', time: '7:15 PM' },
 ];
 
-// ── Team Selector ────────────────────────
+// ── Helpers ──────────────────────────────
+
+function getTeam(key) {
+  return TEAMS[key] || { name: key, short: key, abbr: key.slice(0, 2).toUpperCase(), color: '#64748b' };
+}
 
 function getSelectedTeam() {
   return localStorage.getItem('swsl-team') || 'western-valley';
@@ -40,13 +43,27 @@ function setSelectedTeam(key) {
 }
 
 function applyTeamTheme(key) {
-  const team = TEAMS[key];
-  if (!team) return;
-  document.documentElement.style.setProperty('--accent', team.color);
-  document.documentElement.style.setProperty('--accent-dim', team.color + '14');
-  document.documentElement.style.setProperty('--accent-mid', team.color + '40');
+  const team = getTeam(key);
+  const root = document.documentElement;
+  root.style.setProperty('--accent', team.color);
+  // Parse hex to RGB for the rgba vars
+  const hex = team.color.replace('#', '');
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  root.style.setProperty('--accent-rgb', `${r}, ${g}, ${b}`);
   const sel = document.getElementById('team-select');
   if (sel) sel.value = key;
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+function formatDateLong(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 // ── Render Standings ─────────────────────
@@ -58,14 +75,19 @@ function renderStandings() {
   const yourTeam = getSelectedTeam();
   tbody.innerHTML = STANDINGS.map((row, i) => {
     const isYourTeam = row.key === yourTeam;
-    const teamInfo = TEAMS[row.key];
+    const t = getTeam(row.key);
+    const gdStr = row.gd > 0 ? `+${row.gd}` : `${row.gd}`;
+
     return `
       <tr class="${isYourTeam ? 'your-team' : ''}">
         <td>${i + 1}</td>
         <td>
           <div class="team-cell">
-            <span class="team-dot" style="background:${teamInfo?.color || '#555'}"></span>
-            ${row.team}
+            <div class="team-crest" style="--team-color:${t.color}"><span>${t.abbr}</span></div>
+            <div class="team-info">
+              <span class="team-name-primary">${t.short}</span>
+              <span class="team-name-full">${t.name}</span>
+            </div>
           </div>
         </td>
         <td>${row.g}</td>
@@ -74,49 +96,55 @@ function renderStandings() {
         <td>${row.l}</td>
         <td>${row.gf}</td>
         <td>${row.ga}</td>
-        <td>${row.gd > 0 ? '+' : ''}${row.gd}</td>
+        <td>${gdStr}</td>
         <td class="pts">${row.pts}</td>
       </tr>
     `;
   }).join('');
 }
 
-// ── Render Results ───────────────────────
+// ── Render Home Schedule ─────────────────
 
-function renderResults() {
-  const grid = document.getElementById('results-grid');
-  if (!grid) return;
+function renderHomeSchedule() {
+  const container = document.getElementById('home-schedule');
+  if (!container) return;
 
   const yourTeam = getSelectedTeam();
-  grid.innerHTML = RESULTS.map(r => {
-    const homeTeam = TEAMS[r.homeKey];
-    const awayTeam = TEAMS[r.awayKey];
-    const isHome = r.homeKey === yourTeam;
-    const isAway = r.awayKey === yourTeam;
-
-    let badge = '';
-    if (isHome || isAway) {
-      const yourScore = isHome ? r.homeScore : r.awayScore;
-      const theirScore = isHome ? r.awayScore : r.homeScore;
-      if (yourScore > theirScore) badge = '<span class="result-badge win">W</span>';
-      else if (yourScore < theirScore) badge = '<span class="result-badge loss">L</span>';
-      else badge = '<span class="result-badge draw">D</span>';
-    }
-
-    const dateObj = new Date(r.date + 'T12:00:00');
-    const dateStr = dateObj.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-
+  container.innerHTML = SCHEDULE.map(g => {
+    const isYourGame = g.homeKey === yourTeam || g.awayKey === yourTeam;
     return `
-      <div class="result-card">
-        <div class="result-date">${dateStr}</div>
-        <div class="result-score">
-          <span class="result-team" style="color:${homeTeam?.color || '#fff'}">${r.home}</span>
-          <span class="result-num">${r.homeScore}</span>
-          <span class="result-divider">&ndash;</span>
-          <span class="result-num">${r.awayScore}</span>
-          <span class="result-team" style="color:${awayTeam?.color || '#fff'}">${r.away}</span>
-        </div>
-        ${badge ? `<div style="text-align:center">${badge}</div>` : ''}
+      <div class="schedule-item ${isYourGame ? 'your-game' : ''}">
+        <span class="si-date">${formatDate(g.date)}</span>
+        <span class="si-matchup">${g.home} vs ${g.away}</span>
+        <span class="si-time">${g.time}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+// ── Render Standings Page ────────────────
+
+function renderStandingsFull() {
+  renderStandings();
+  // Also render schedule on standings page
+  const container = document.getElementById('full-schedule');
+  if (!container) return;
+  // Group by date
+  const grouped = {};
+  SCHEDULE.forEach(g => {
+    if (!grouped[g.date]) grouped[g.date] = [];
+    grouped[g.date].push(g);
+  });
+  container.innerHTML = Object.entries(grouped).map(([date, games]) => {
+    return `
+      <div class="schedule-date-group">
+        <div class="schedule-date-header">${formatDateLong(date)}</div>
+        ${games.map(g => `
+          <div class="schedule-item">
+            <span class="si-matchup">${g.home} vs ${g.away}</span>
+            <span class="si-time">${g.time}</span>
+          </div>
+        `).join('')}
       </div>
     `;
   }).join('');
@@ -131,10 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sel.addEventListener('change', (e) => {
       setSelectedTeam(e.target.value);
       renderStandings();
-      renderResults();
+      renderHomeSchedule();
+      renderStandingsFull();
     });
   }
   applyTeamTheme(getSelectedTeam());
   renderStandings();
-  renderResults();
+  renderHomeSchedule();
+  renderStandingsFull();
 });

@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Standings — SWSL U15 Boys</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">SWSL <span class="accent">U15 Boys</span></a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
+      </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="standings.html" class="active">Standings</a>
@@ -45,8 +49,8 @@
         <table class="standings-table">
           <thead>
             <tr>
-              <th class="pos">#</th>
-              <th class="team-col">Team</th>
+              <th class="col-pos">#</th>
+              <th class="col-team">Team</th>
               <th>P</th>
               <th>W</th>
               <th>D</th>
@@ -54,13 +58,13 @@
               <th>GF</th>
               <th>GA</th>
               <th>GD</th>
-              <th class="pts-col">PTS</th>
+              <th class="col-pts">PTS</th>
             </tr>
           </thead>
           <tbody id="standings-body"></tbody>
         </table>
       </div>
-      <div style="margin-top:16px; display:flex; gap:20px; color:var(--text-secondary); font-size:12px; flex-wrap:wrap;">
+      <div class="legend">
         <span><strong>P</strong> Played</span>
         <span><strong>W</strong> Won</span>
         <span><strong>D</strong> Drawn</span>
@@ -70,12 +74,13 @@
         <span><strong>GD</strong> Goal Difference</span>
         <span><strong>PTS</strong> Points</span>
       </div>
+      <div id="full-schedule" style="margin-top:40px;"></div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>Built by <strong>High Tide Studios</strong></p>
+      <p class="footer-text">Built by <strong>High Tide Studios</strong></p>
       <p class="footer-sub">Data sourced from Soccer NB</p>
     </div>
   </footer>

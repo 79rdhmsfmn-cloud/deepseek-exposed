@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SWSL U15 Boys — Standings & Schedule</title>
-  <meta name="description" content="Standings, schedules, and results for the SWSL U15 Boys soccer league in New Brunswick.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
         <span class="logo-text">SWSL <span class="accent">U15 Boys</span></span>
       </a>
       <div class="nav-links">
@@ -39,57 +40,18 @@
     <div class="hero-content">
       <h1>SWSL U15 Boys</h1>
       <p class="hero-sub">South West Soccer League &mdash; Division 1</p>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <span class="stat-num" id="stat-teams">6</span>
-          <span class="stat-label">Teams</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num" id="stat-games">50</span>
-          <span class="stat-label">Games</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num" id="stat-goals">184</span>
-          <span class="stat-label">Goals</span>
-        </div>
-      </div>
     </div>
   </header>
 
   <section class="section">
-    <div class="container">
-      <h2 class="section-title">Next Match</h2>
-      <div class="next-game-card" id="next-game">
-        <div class="game-date">Thursday, August 6</div>
-        <div class="game-teams">
-          <div class="game-team">
-            <span class="team-name">Hampton U15AA</span>
-            <span class="team-dot" style="background:#9E9E9E"></span>
-          </div>
-          <div class="game-vs">vs</div>
-          <div class="game-team">
-            <span class="team-dot" style="background:#E63946"></span>
-            <span class="team-name">Western Valley</span>
-          </div>
-        </div>
-        <div class="game-details">
-          <span>Hampton High School</span>
-          <span>7:15 PM</span>
-          <span>Regular Season</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section dark">
     <div class="container">
       <h2 class="section-title">Standings</h2>
       <div class="table-wrap">
         <table class="standings-table" id="standings-table">
           <thead>
             <tr>
-              <th class="pos">#</th>
-              <th class="team-col">Team</th>
+              <th class="col-pos">#</th>
+              <th class="col-team">Team</th>
               <th>P</th>
               <th>W</th>
               <th>D</th>
@@ -97,7 +59,7 @@
               <th>GF</th>
               <th>GA</th>
               <th>GD</th>
-              <th class="pts-col">PTS</th>
+              <th class="col-pts">PTS</th>
             </tr>
           </thead>
           <tbody id="standings-body">
@@ -108,18 +70,48 @@
     </div>
   </section>
 
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Next Match</h2>
+      <div class="next-game" id="next-game">
+        <div class="next-game-date">Thursday, August 6</div>
+        <div class="next-game-matchup">
+          <div class="next-team">
+            <div class="team-crest" style="--team-color:#9E9E9E">
+              <span>HA</span>
+            </div>
+            <span class="next-team-name">Hampton U15AA</span>
+          </div>
+          <div class="next-vs">vs</div>
+          <div class="next-team">
+            <div class="team-crest" style="--team-color:#E63946">
+              <span>WV</span>
+            </div>
+            <span class="next-team-name">Western Valley</span>
+          </div>
+        </div>
+        <div class="next-game-meta">
+          <span>Hampton High School</span>
+          <span class="meta-sep">&middot;</span>
+          <span>7:15 PM</span>
+          <span class="meta-sep">&middot;</span>
+          <span>Regular Season</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Recent Results</h2>
-      <div class="results-grid" id="results-grid">
-      </div>
+      <h2 class="section-title">Remaining Games</h2>
+      <div class="schedule-list" id="home-schedule"></div>
       <a href="schedule.html" class="see-all">View Full Schedule &rarr;</a>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>Built by <strong>High Tide Studios</strong></p>
+      <p class="footer-text">Built by <strong>High Tide Studios</strong></p>
       <p class="footer-sub">Data sourced from Soccer NB</p>
     </div>
   </footer>
